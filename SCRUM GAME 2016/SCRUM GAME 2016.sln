@@ -1,7 +1,7 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{C6C20B4D-98AA-42C3-32FA-7CA5BF50E4EF}") = "SCRUM GAME 2016", "Assembly-CSharp.csproj", "{2955D592-C50F-51DF-37E0-C4F14808159C}"
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCRUM GAME 2016.CSharp", "SCRUM GAME 2016.CSharp.csproj", "{CBC631B4-CAD2-CBBC-8BE7-3354223B4FF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +9,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2955D592-C50F-51DF-37E0-C4F14808159C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2955D592-C50F-51DF-37E0-C4F14808159C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2955D592-C50F-51DF-37E0-C4F14808159C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2955D592-C50F-51DF-37E0-C4F14808159C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBC631B4-CAD2-CBBC-8BE7-3354223B4FF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBC631B4-CAD2-CBBC-8BE7-3354223B4FF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBC631B4-CAD2-CBBC-8BE7-3354223B4FF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBC631B4-CAD2-CBBC-8BE7-3354223B4FF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
