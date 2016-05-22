@@ -573,7 +573,559 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bottom
+        weight: 1
+      - path: curve3
+        weight: 1
+      - path: curve4
+        weight: 1
+      - path: group
+        weight: 1
+      - path: group/pasted__pCube1
+        weight: 1
+      - path: group/pasted__pCube1/transform31
+        weight: 1
+      - path: group1
+        weight: 1
+      - path: group2
+        weight: 1
+      - path: group3
+        weight: 1
+      - path: group3/pasted__pSphere1 2
+        weight: 1
+      - path: group3/pasted__pSphere1 2/transform29
+        weight: 1
+      - path: group4
+        weight: 1
+      - path: group4/pasted__pTorus1 2
+        weight: 1
+      - path: group4/pasted__pTorus1 2/transform26
+        weight: 1
+      - path: group5
+        weight: 1
+      - path: group5/pasted__group4 2
+        weight: 1
+      - path: group5/pasted__group4 2/pasted__pasted__pTorus1 2
+        weight: 1
+      - path: group5/pasted__group4 2/pasted__pasted__pTorus1 2/transform25
+        weight: 1
+      - path: group6
+        weight: 1
+      - path: group6/pasted__pPyramid1 2
+        weight: 1
+      - path: group6/pasted__pPyramid1 2/transform23
+        weight: 1
+      - path: group7
+        weight: 1
+      - path: group7/pasted__group6 2
+        weight: 1
+      - path: group7/pasted__group6 2/pasted__pasted__pPyramid1 2
+        weight: 1
+      - path: group7/pasted__group6 2/pasted__pasted__pPyramid1 2/transform22
+        weight: 1
+      - path: group8
+        weight: 1
+      - path: group8/pasted__group7 2
+        weight: 1
+      - path: group8/pasted__group7 2/pasted__pasted__group6 2
+        weight: 1
+      - path: group8/pasted__group7 2/pasted__pasted__group6 2/pasted__pasted__pasted__pPyramid1
+          2
+        weight: 1
+      - path: group8/pasted__group7 2/pasted__pasted__group6 2/pasted__pasted__pasted__pPyramid1
+          2/transform21
+        weight: 1
+      - path: group9
+        weight: 1
+      - path: group9/pasted__group8 2
+        weight: 1
+      - path: group9/pasted__group8 2/pasted__pasted__group7 2
+        weight: 1
+      - path: group9/pasted__group8 2/pasted__pasted__group7 2/pasted__pasted__pasted__group6
+          2
+        weight: 1
+      - path: group9/pasted__group8 2/pasted__pasted__group7 2/pasted__pasted__pasted__group6
+          2/pasted__pasted__pasted__pasted__pPyramid1 2
+        weight: 1
+      - path: group9/pasted__group8 2/pasted__pasted__group7 2/pasted__pasted__pasted__group6
+          2/pasted__pasted__pasted__pasted__pPyramid1 2/transform20
+        weight: 1
+      - path: group10
+        weight: 1
+      - path: group10/pasted__group9
+        weight: 1
+      - path: group10/pasted__group9/pasted__pasted__group8
+        weight: 1
+      - path: group10/pasted__group9/pasted__pasted__group8/pasted__pasted__pasted__group7
+        weight: 1
+      - path: group10/pasted__group9/pasted__pasted__group8/pasted__pasted__pasted__group7/pasted__pasted__pasted__pasted__group6
+        weight: 1
+      - path: group10/pasted__group9/pasted__pasted__group8/pasted__pasted__pasted__group7/pasted__pasted__pasted__pasted__group6/pasted__pasted__pasted__pasted__pasted__pPyramid1
+        weight: 1
+      - path: group10/pasted__group9/pasted__pasted__group8/pasted__pasted__pasted__group7/pasted__pasted__pasted__pasted__group6/pasted__pasted__pasted__pasted__pasted__pPyramid1/transform19
+        weight: 1
+      - path: group11
+        weight: 1
+      - path: group11/pasted__pCylinder3
+        weight: 1
+      - path: group11/pasted__pCylinder3/transform5
+        weight: 1
+      - path: group12
+        weight: 1
+      - path: group12/pasted__pCylinder3 1
+        weight: 1
+      - path: group12/pasted__pCylinder3 1/transform4
+        weight: 1
+      - path: group13
+        weight: 1
+      - path: group13/pasted__pCylinder3 2
+        weight: 1
+      - path: group13/pasted__pCylinder3 2/transform3
+        weight: 1
+      - path: group14
+        weight: 1
+      - path: group14/pasted__pCylinder5
+        weight: 1
+      - path: group14/pasted__pCylinder5/transform10
+        weight: 1
+      - path: group15
+        weight: 1
+      - path: group15/pasted__group14
+        weight: 1
+      - path: group15/pasted__group14/pasted__pasted__pCylinder5
+        weight: 1
+      - path: group15/pasted__group14/pasted__pasted__pCylinder5/transform9
+        weight: 1
+      - path: group16
+        weight: 1
+      - path: group16/pasted__group15
+        weight: 1
+      - path: group16/pasted__group15/pasted__pasted__group14
+        weight: 1
+      - path: group16/pasted__group15/pasted__pasted__group14/pasted__pasted__pasted__pCylinder5
+        weight: 1
+      - path: group16/pasted__group15/pasted__pasted__group14/pasted__pasted__pasted__pCylinder5/transform8
+        weight: 1
+      - path: group17
+        weight: 1
+      - path: group17/pasted__curve3
+        weight: 1
+      - path: group17/pasted__curve4
+        weight: 1
+      - path: group17/pasted__group
+        weight: 1
+      - path: group17/pasted__group/pasted__pasted__pCube1
+        weight: 1
+      - path: group17/pasted__group/pasted__pasted__pCube1/pasted__transform31
+        weight: 1
+      - path: group17/pasted__group3
+        weight: 1
+      - path: group17/pasted__group3/pasted__pasted__pSphere1
+        weight: 1
+      - path: group17/pasted__group3/pasted__pasted__pSphere1/pasted__transform29
+        weight: 1
+      - path: group17/pasted__group4
+        weight: 1
+      - path: group17/pasted__group4/pasted__pasted__pTorus1
+        weight: 1
+      - path: group17/pasted__group4/pasted__pasted__pTorus1/pasted__transform26
+        weight: 1
+      - path: group17/pasted__group5
+        weight: 1
+      - path: group17/pasted__group5/pasted__pasted__group4
+        weight: 1
+      - path: group17/pasted__group5/pasted__pasted__group4/pasted__pasted__pasted__pTorus1
+        weight: 1
+      - path: group17/pasted__group5/pasted__pasted__group4/pasted__pasted__pasted__pTorus1/pasted__transform25
+        weight: 1
+      - path: group17/pasted__group6
+        weight: 1
+      - path: group17/pasted__group6/pasted__pasted__pPyramid1
+        weight: 1
+      - path: group17/pasted__group6/pasted__pasted__pPyramid1/pasted__transform23
+        weight: 1
+      - path: group17/pasted__group7
+        weight: 1
+      - path: group17/pasted__group7/pasted__pasted__group6
+        weight: 1
+      - path: group17/pasted__group7/pasted__pasted__group6/pasted__pasted__pasted__pPyramid1
+        weight: 1
+      - path: group17/pasted__group7/pasted__pasted__group6/pasted__pasted__pasted__pPyramid1/pasted__transform22
+        weight: 1
+      - path: group17/pasted__group8
+        weight: 1
+      - path: group17/pasted__group8/pasted__pasted__group7
+        weight: 1
+      - path: group17/pasted__group8/pasted__pasted__group7/pasted__pasted__pasted__group6
+        weight: 1
+      - path: group17/pasted__group8/pasted__pasted__group7/pasted__pasted__pasted__group6/pasted__pasted__pasted__pasted__pPyramid1
+        weight: 1
+      - path: group17/pasted__group8/pasted__pasted__group7/pasted__pasted__pasted__group6/pasted__pasted__pasted__pasted__pPyramid1/pasted__transform21
+        weight: 1
+      - path: group17/pasted__group9 1
+        weight: 1
+      - path: group17/pasted__group9 1/pasted__pasted__group8 1
+        weight: 1
+      - path: group17/pasted__group9 1/pasted__pasted__group8 1/pasted__pasted__pasted__group7
+          1
+        weight: 1
+      - path: group17/pasted__group9 1/pasted__pasted__group8 1/pasted__pasted__pasted__group7
+          1/pasted__pasted__pasted__pasted__group6 1
+        weight: 1
+      - path: group17/pasted__group9 1/pasted__pasted__group8 1/pasted__pasted__pasted__group7
+          1/pasted__pasted__pasted__pasted__group6 1/pasted__pasted__pasted__pasted__pasted__pPyramid1
+          1
+        weight: 1
+      - path: group17/pasted__group9 1/pasted__pasted__group8 1/pasted__pasted__pasted__group7
+          1/pasted__pasted__pasted__pasted__group6 1/pasted__pasted__pasted__pasted__pasted__pPyramid1
+          1/pasted__transform20
+        weight: 1
+      - path: group17/pasted__group10
+        weight: 1
+      - path: group17/pasted__group10/pasted__pasted__group9
+        weight: 1
+      - path: group17/pasted__group10/pasted__pasted__group9/pasted__pasted__pasted__group8
+        weight: 1
+      - path: group17/pasted__group10/pasted__pasted__group9/pasted__pasted__pasted__group8/pasted__pasted__pasted__pasted__group7
+        weight: 1
+      - path: group17/pasted__group10/pasted__pasted__group9/pasted__pasted__pasted__group8/pasted__pasted__pasted__pasted__group7/pasted__pasted__pasted__pasted__pasted__group6
+        weight: 1
+      - path: group17/pasted__group10/pasted__pasted__group9/pasted__pasted__pasted__group8/pasted__pasted__pasted__pasted__group7/pasted__pasted__pasted__pasted__pasted__group6/pasted__pasted__pasted__pasted__pasted__pasted__pPyramid1
+        weight: 1
+      - path: group17/pasted__group10/pasted__pasted__group9/pasted__pasted__pasted__group8/pasted__pasted__pasted__pasted__group7/pasted__pasted__pasted__pasted__pasted__group6/pasted__pasted__pasted__pasted__pasted__pasted__pPyramid1/pasted__transform19
+        weight: 1
+      - path: group17/pasted__pCube1 1
+        weight: 1
+      - path: group17/pasted__pCube1 1/pasted__transform32
+        weight: 1
+      - path: group17/pasted__pCube2
+        weight: 1
+      - path: group17/pasted__pCube2/pasted__transform28
+        weight: 1
+      - path: group17/pasted__pCube3
+        weight: 1
+      - path: group17/pasted__pCube3/pasted__polySurface6
+        weight: 1
+      - path: group17/pasted__pCube3/pasted__polySurface6/pasted__polySurface8
+        weight: 1
+      - path: group17/pasted__pCube3/pasted__polySurface6/pasted__transform34
+        weight: 1
+      - path: group17/pasted__pCube3/pasted__transform33
+        weight: 1
+      - path: group17/pasted__pCylinder7
+        weight: 1
+      - path: group17/pasted__pCylinder7/pasted__transform18
+        weight: 1
+      - path: group17/pasted__pCylinder8
+        weight: 1
+      - path: group17/pasted__pCylinder8/pasted__transform17
+        weight: 1
+      - path: group17/pasted__pPyramid1
+        weight: 1
+      - path: group17/pasted__pPyramid1/pasted__transform24
+        weight: 1
+      - path: group17/pasted__pSphere1
+        weight: 1
+      - path: group17/pasted__pSphere1/pasted__transform30
+        weight: 1
+      - path: group17/pasted__pTorus1
+        weight: 1
+      - path: group17/pasted__pTorus1/pasted__transform27
+        weight: 1
+      - path: group18
+        weight: 1
+      - path: group18/pasted__curve3 1
+        weight: 1
+      - path: group18/pasted__curve4 1
+        weight: 1
+      - path: group18/pasted__group 1
+        weight: 1
+      - path: group18/pasted__group 1/pasted__pasted__pCube1 1
+        weight: 1
+      - path: group18/pasted__group 1/pasted__pasted__pCube1 1/pasted__transform31
+          1
+        weight: 1
+      - path: group18/pasted__group3 1
+        weight: 1
+      - path: group18/pasted__group3 1/pasted__pasted__pSphere1 1
+        weight: 1
+      - path: group18/pasted__group3 1/pasted__pasted__pSphere1 1/pasted__transform29
+          1
+        weight: 1
+      - path: group18/pasted__group4 1
+        weight: 1
+      - path: group18/pasted__group4 1/pasted__pasted__pTorus1 1
+        weight: 1
+      - path: group18/pasted__group4 1/pasted__pasted__pTorus1 1/pasted__transform26
+          1
+        weight: 1
+      - path: group18/pasted__group5 1
+        weight: 1
+      - path: group18/pasted__group5 1/pasted__pasted__group4 1
+        weight: 1
+      - path: group18/pasted__group5 1/pasted__pasted__group4 1/pasted__pasted__pasted__pTorus1
+          1
+        weight: 1
+      - path: group18/pasted__group5 1/pasted__pasted__group4 1/pasted__pasted__pasted__pTorus1
+          1/pasted__transform25 1
+        weight: 1
+      - path: group18/pasted__group6 1
+        weight: 1
+      - path: group18/pasted__group6 1/pasted__pasted__pPyramid1 1
+        weight: 1
+      - path: group18/pasted__group6 1/pasted__pasted__pPyramid1 1/pasted__transform23
+          1
+        weight: 1
+      - path: group18/pasted__group7 1
+        weight: 1
+      - path: group18/pasted__group7 1/pasted__pasted__group6 1
+        weight: 1
+      - path: group18/pasted__group7 1/pasted__pasted__group6 1/pasted__pasted__pasted__pPyramid1
+          1
+        weight: 1
+      - path: group18/pasted__group7 1/pasted__pasted__group6 1/pasted__pasted__pasted__pPyramid1
+          1/pasted__transform22 1
+        weight: 1
+      - path: group18/pasted__group8 1
+        weight: 1
+      - path: group18/pasted__group8 1/pasted__pasted__group7 1
+        weight: 1
+      - path: group18/pasted__group8 1/pasted__pasted__group7 1/pasted__pasted__pasted__group6
+          1
+        weight: 1
+      - path: group18/pasted__group8 1/pasted__pasted__group7 1/pasted__pasted__pasted__group6
+          1/pasted__pasted__pasted__pasted__pPyramid1 1
+        weight: 1
+      - path: group18/pasted__group8 1/pasted__pasted__group7 1/pasted__pasted__pasted__group6
+          1/pasted__pasted__pasted__pasted__pPyramid1 1/pasted__transform21 1
+        weight: 1
+      - path: group18/pasted__group9 2
+        weight: 1
+      - path: group18/pasted__group9 2/pasted__pasted__group8 2
+        weight: 1
+      - path: group18/pasted__group9 2/pasted__pasted__group8 2/pasted__pasted__pasted__group7
+          2
+        weight: 1
+      - path: group18/pasted__group9 2/pasted__pasted__group8 2/pasted__pasted__pasted__group7
+          2/pasted__pasted__pasted__pasted__group6 2
+        weight: 1
+      - path: group18/pasted__group9 2/pasted__pasted__group8 2/pasted__pasted__pasted__group7
+          2/pasted__pasted__pasted__pasted__group6 2/pasted__pasted__pasted__pasted__pasted__pPyramid1
+          2
+        weight: 1
+      - path: group18/pasted__group9 2/pasted__pasted__group8 2/pasted__pasted__pasted__group7
+          2/pasted__pasted__pasted__pasted__group6 2/pasted__pasted__pasted__pasted__pasted__pPyramid1
+          2/pasted__transform20 1
+        weight: 1
+      - path: group18/pasted__group10 1
+        weight: 1
+      - path: group18/pasted__group10 1/pasted__pasted__group9 1
+        weight: 1
+      - path: group18/pasted__group10 1/pasted__pasted__group9 1/pasted__pasted__pasted__group8
+          1
+        weight: 1
+      - path: group18/pasted__group10 1/pasted__pasted__group9 1/pasted__pasted__pasted__group8
+          1/pasted__pasted__pasted__pasted__group7 1
+        weight: 1
+      - path: group18/pasted__group10 1/pasted__pasted__group9 1/pasted__pasted__pasted__group8
+          1/pasted__pasted__pasted__pasted__group7 1/pasted__pasted__pasted__pasted__pasted__group6
+          1
+        weight: 1
+      - path: group18/pasted__group10 1/pasted__pasted__group9 1/pasted__pasted__pasted__group8
+          1/pasted__pasted__pasted__pasted__group7 1/pasted__pasted__pasted__pasted__pasted__group6
+          1/pasted__pasted__pasted__pasted__pasted__pasted__pPyramid1 1
+        weight: 1
+      - path: group18/pasted__group10 1/pasted__pasted__group9 1/pasted__pasted__pasted__group8
+          1/pasted__pasted__pasted__pasted__group7 1/pasted__pasted__pasted__pasted__pasted__group6
+          1/pasted__pasted__pasted__pasted__pasted__pasted__pPyramid1 1/pasted__transform19
+          1
+        weight: 1
+      - path: group18/pasted__pCube1 2
+        weight: 1
+      - path: group18/pasted__pCube1 2/pasted__transform32 1
+        weight: 1
+      - path: group18/pasted__pCube2 1
+        weight: 1
+      - path: group18/pasted__pCube2 1/pasted__transform28 1
+        weight: 1
+      - path: group18/pasted__pCube3 1
+        weight: 1
+      - path: group18/pasted__pCube3 1/pasted__polySurface6 1
+        weight: 1
+      - path: group18/pasted__pCube3 1/pasted__polySurface6 1/pasted__polySurface9
+        weight: 1
+      - path: group18/pasted__pCube3 1/pasted__polySurface6 1/pasted__transform34
+          1
+        weight: 1
+      - path: group18/pasted__pCube3 1/pasted__transform33 1
+        weight: 1
+      - path: group18/pasted__pCylinder7 1
+        weight: 1
+      - path: group18/pasted__pCylinder7 1/pasted__transform18 1
+        weight: 1
+      - path: group18/pasted__pCylinder8 1
+        weight: 1
+      - path: group18/pasted__pCylinder8 1/pasted__transform17 1
+        weight: 1
+      - path: group18/pasted__pPyramid1 1
+        weight: 1
+      - path: group18/pasted__pPyramid1 1/pasted__transform24 1
+        weight: 1
+      - path: group18/pasted__pSphere1 1
+        weight: 1
+      - path: group18/pasted__pSphere1 1/pasted__transform30 1
+        weight: 1
+      - path: group18/pasted__pTorus1 1
+        weight: 1
+      - path: group18/pasted__pTorus1 1/pasted__transform27 1
+        weight: 1
+      - path: group19
+        weight: 1
+      - path: group19/pasted__pSphere2
+        weight: 1
+      - path: group20
+        weight: 1
+      - path: group20/pasted__pSphere2 1
+        weight: 1
+      - path: pCube1
+        weight: 1
+      - path: pCube1/transform32
+        weight: 1
+      - path: pCube2
+        weight: 1
+      - path: pCube2/transform28
+        weight: 1
+      - path: pCube3
+        weight: 1
+      - path: pCube3/polySurface5
+        weight: 1
+      - path: pCube3/polySurface6
+        weight: 1
+      - path: pCube3/polySurface6/polySurface7
+        weight: 1
+      - path: pCube3/polySurface6/polySurface8
+        weight: 1
+      - path: pCube3/polySurface6/polySurface9
+        weight: 1
+      - path: pCube3/polySurface6/polySurface10
+        weight: 1
+      - path: pCube3/polySurface6/polySurface11
+        weight: 1
+      - path: pCube3/polySurface6/polySurface12
+        weight: 1
+      - path: pCube3/polySurface6/polySurface13
+        weight: 1
+      - path: pCube3/polySurface6/polySurface14
+        weight: 1
+      - path: pCube3/polySurface6/polySurface15
+        weight: 1
+      - path: pCube3/polySurface6/polySurface16
+        weight: 1
+      - path: pCube3/polySurface6/polySurface17
+        weight: 1
+      - path: pCube3/polySurface6/polySurface18
+        weight: 1
+      - path: pCube3/polySurface6/polySurface19
+        weight: 1
+      - path: pCube3/polySurface6/polySurface20
+        weight: 1
+      - path: pCube3/polySurface6/polySurface21
+        weight: 1
+      - path: pCube3/polySurface6/transform34
+        weight: 1
+      - path: pCube3/transform33
+        weight: 1
+      - path: pCylinder1
+        weight: 1
+      - path: pCylinder1/transform1
+        weight: 1
+      - path: pCylinder2
+        weight: 1
+      - path: pCylinder2/transform2
+        weight: 1
+      - path: pCylinder3
+        weight: 1
+      - path: pCylinder3/transform6
+        weight: 1
+      - path: pCylinder4
+        weight: 1
+      - path: pCylinder4/transform7
+        weight: 1
+      - path: pCylinder5
+        weight: 1
+      - path: pCylinder5/transform11
+        weight: 1
+      - path: pCylinder6
+        weight: 1
+      - path: pCylinder6/polySurface1
+        weight: 1
+      - path: pCylinder6/polySurface1/transform16
+        weight: 1
+      - path: pCylinder6/polySurface2
+        weight: 1
+      - path: pCylinder6/polySurface2/transform15
+        weight: 1
+      - path: pCylinder6/polySurface3
+        weight: 1
+      - path: pCylinder6/polySurface3/transform14
+        weight: 1
+      - path: pCylinder6/polySurface4
+        weight: 1
+      - path: pCylinder6/polySurface4/transform13
+        weight: 1
+      - path: pCylinder6/transform12
+        weight: 1
+      - path: pCylinder7
+        weight: 1
+      - path: pCylinder7/transform18
+        weight: 1
+      - path: pCylinder8
+        weight: 1
+      - path: pCylinder8/transform17
+        weight: 1
+      - path: pPyramid1
+        weight: 1
+      - path: pPyramid1/transform24
+        weight: 1
+      - path: pSphere1
+        weight: 1
+      - path: pSphere1/transform30
+        weight: 1
+      - path: pTorus1
+        weight: 1
+      - path: pTorus1/transform27
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
     isReadable: 1
   meshes:
     lODScreenPercentages: []
