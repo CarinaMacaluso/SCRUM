@@ -10,7 +10,6 @@ public class PlayerWalk : MonoBehaviour
 
 	public float moveSpeed;
 	public float rotationSpeed;
-	public float jumpStrength;
 	public int score;
 	public Text scoreText;
 	public int health;
@@ -62,11 +61,7 @@ public class PlayerWalk : MonoBehaviour
 	void FixedUpdate ()
 	{
 		transform.Translate (new Vector3 (0, 0, 1) * moveSpeed);
-
-		if (Input.GetKeyDown (KeyCode.Space)) { 
-			rb.AddForce (Vector3.up * 800F * jumpStrength);
-		}
-
+		
 		if (isShieldActive == true) {
 			shieldCounter++;
 			if (shieldCounter == 1000) {
