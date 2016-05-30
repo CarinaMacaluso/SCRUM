@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class PlayerWalk : MonoBehaviour
 {
 
-	public float moveSpeed;
 	public float rotationSpeed;
 	public int score;
 	public Text scoreText;
@@ -59,9 +58,7 @@ public class PlayerWalk : MonoBehaviour
 	}
 
 	void FixedUpdate ()
-	{
-		transform.Translate (new Vector3 (0, 0, 1) * moveSpeed);
-		
+	{		
 		if (isShieldActive == true) {
 			shieldCounter++;
 			if (shieldCounter == 1000) {
@@ -89,6 +86,16 @@ public class PlayerWalk : MonoBehaviour
 			print ("Shield is active."); 
 		} else if (coll.gameObject.tag == "Obstacle" && isShieldActive == true) {
 			coll.gameObject.GetComponent<Collider> ().enabled = false; 
+		} else if (coll.gameObject.tag == "JetPack") {
+			Destroy (coll.gameObject);
+			PlayerJump.jetPack = true;
+		} else if(coll.gameObject.tag == "Enemy") {
+			print(coll.gameObject.name);
+			SceneManager.LoadScene ("Menue");
+			//transform.position = new Vector3(transform.position.x,0,transform.position.z);
+		} else if(coll.gameObject.tag == "Obstacle") {
+			health -= 10;
+			print ("Outch. health: " + health);
 		}
 
 	}

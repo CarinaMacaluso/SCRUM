@@ -219,12 +219,12 @@ pip-log.txt
 # =============== #
 # Unity generated #
 # =============== #
-[Tt]emp/
-[Oo]bj/
-[Bb]uild
-/[Ll]ibrary/
-sysinfo.txt
-*.stackdump
+SCRUM GAME 2016/[Tt]emp/
+SCRUM GAME 2016/[Oo]bj/
+SCRUM GAME 2016/[Bb]uild
+SCRUM GAME 2016/[Ll]ibrary/
+SCRUM GAME 2016/sysinfo.txt
+SCRUM GAME 2016/*.stackdump
  
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
