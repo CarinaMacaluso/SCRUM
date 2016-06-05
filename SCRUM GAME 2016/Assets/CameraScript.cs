@@ -5,7 +5,6 @@ public class CameraScript : MonoBehaviour {
 
 	public float moveSpeed = 3;
 
-
 	// Use this for initialization
 	void Start () {
 	
