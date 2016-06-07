@@ -46,10 +46,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\CameraScript.cs" />
+     <Compile Include="Assets\Coins.cs" />
      <Compile Include="Assets\ExportTerrain.cs" />
      <Compile Include="Assets\Fonts\Menu.cs" />
+     <Compile Include="Assets\Lebensanzeige.cs" />
      <Compile Include="Assets\PlayerJump.cs" />
      <Compile Include="Assets\PlayerWalk.cs" />
+     <Compile Include="Assets\Timer.cs" />
      <Compile Include="Assets\pauseGame.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
