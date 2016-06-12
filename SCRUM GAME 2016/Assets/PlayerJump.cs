@@ -3,13 +3,11 @@ using System.Collections;
 
 public class PlayerJump : MonoBehaviour
 {
-
-	public float moveSpeed;
 	public float jumpStrength;
 	public float jetPackStrength;
 	public static bool jetPack = false;
 	public static bool onGround = true;
-	bool spacePressed = false;
+	public static bool spacePressed = false;
 	Rigidbody rb;
 	int jetPackCounter;
 
@@ -19,24 +17,14 @@ public class PlayerJump : MonoBehaviour
 		rb = GetComponent<Rigidbody> ();
 	}
 
-
-	void Update ()
-	{
-		if (Input.GetKeyDown (KeyCode.Space)) { 
-			spacePressed = true;
-		}
-	}
-
 	// Update is called once per frame
 	void FixedUpdate ()
 	{
-		transform.Translate (new Vector3 (0, 0, -moveSpeed));
-
-		 
 		if (!onGround) {
 			if (Physics.Raycast (transform.position, Vector3.down, 0.5f)) {
 				onGround = true;
-				rb.velocity = new Vector3 (0, 0, 0);;
+				rb.velocity = new Vector3 (0, 0, 0);
+				;
 				//transform.position = new Vector3 (transform.position.x, -0.2f, transform.position.z);
 				print ("down");
 			} 

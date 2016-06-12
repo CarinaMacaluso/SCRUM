@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerWalk : MonoBehaviour
 {
+	public float moveSpeed;
 	public int score;
-	public Text healthText;
 	public Text coinText;
 	public int health;
 	public bool isShieldActive;
@@ -16,7 +16,9 @@ public class PlayerWalk : MonoBehaviour
 	public GameObject centerLine;
 	public GameObject leftLine;
 	public GameObject rightLine;
+	public GameObject healthBar;
 	public int currentLine;
+	public static bool gamePaused = false;
 
 	// Use this for initialization
 	void Start ()
@@ -33,29 +35,36 @@ public class PlayerWalk : MonoBehaviour
 
 	void Update ()
 	{
-		deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
+		if (!gamePaused) {
+			deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
 
-		if (Input.GetKeyDown ("left") || Input.GetKeyDown (KeyCode.A)) { // left
-			if (currentLine == 0) {
-				transform.position = new Vector3 (leftLine.transform.position.x, transform.position.y, transform.position.z);
-				currentLine = 1; 
-			} else if (currentLine == -1) {
-				transform.position = new Vector3 (centerLine.transform.position.x, transform.position.y, transform.position.z);
-				currentLine = 0; 
-			}
+			if (Input.GetKeyDown ("left") || Input.GetKeyDown (KeyCode.A)) { // left
+				if (currentLine == 0) {
+					transform.position = new Vector3 (leftLine.transform.position.x, transform.position.y, transform.position.z);
+					currentLine = 1; 
+				} else if (currentLine == -1) {
+					transform.position = new Vector3 (centerLine.transform.position.x, transform.position.y, transform.position.z);
+					currentLine = 0; 
+				}
 
-		} else if (Input.GetKeyDown ("right") || Input.GetKeyDown (KeyCode.D)) { //right
-			if (currentLine == 0) {
-				transform.position = new Vector3 (rightLine.transform.position.x, transform.position.y, transform.position.z);
-				currentLine = -1;
-			} else if (currentLine == 1) {
-				transform.position = new Vector3 (centerLine.transform.position.x, transform.position.y, transform.position.z);
-				currentLine = 0;
+			} else if (Input.GetKeyDown ("right") || Input.GetKeyDown (KeyCode.D)) { //right
+				if (currentLine == 0) {
+					transform.position = new Vector3 (rightLine.transform.position.x, transform.position.y, transform.position.z);
+					currentLine = -1;
+				} else if (currentLine == 1) {
+					transform.position = new Vector3 (centerLine.transform.position.x, transform.position.y, transform.position.z);
+					currentLine = 0;
+				}
+			} else if (Input.GetKeyDown (KeyCode.Space)) { 
+				PlayerJump.spacePressed = true;
 			}
 		}
 	}
 
-	void FixedUpdate() {
+	void FixedUpdate ()
+	{
+		transform.Translate (new Vector3 (0, 0, -moveSpeed));
+
 		if (isShieldActive == true) {
 			shieldCounter++;
 			if (shieldCounter == 250) {
@@ -75,7 +84,7 @@ public class PlayerWalk : MonoBehaviour
 		} else if (coll.gameObject.tag == "HealthItem") {
 			Destroy (coll.gameObject);
 			health = 100;
-			healthText.text = health.ToString (); 
+			healthBar.GetComponent<RectTransform> ().sizeDelta = new Vector2 (1500*(health/100),400);
 		} else if (coll.gameObject.tag == "Shield") {
 			Destroy (coll.gameObject);
 			isShieldActive = true;
@@ -87,16 +96,24 @@ public class PlayerWalk : MonoBehaviour
 			PlayerJump.jetPack = true;
 		} else if (coll.gameObject.tag == "Enemy") {
 			print (coll.gameObject.name);
-			SceneManager.LoadScene ("Menue");
+			gameOver ();
 			//transform.position = new Vector3(transform.position.x,0,transform.position.z);
 		} else if (coll.gameObject.tag == "Obstacle") {
-			health -= 10;
 			print ("Outch. health: " + health);
-			healthText.text = health.ToString (); 
-
+			changeHealth (10);
 		}
+	}
+
+	void changeHealth(int damage) {
+		health -= damage;
+		healthBar.GetComponent<RectTransform> ().sizeDelta = new Vector2 (1500f*(health/100f),400f);
+	}
+
+	void gameOver() {
+		SceneManager.LoadScene ("GameOver");
 
 	}
+		
 
 	//Für FPS-Anzeige (oben links im Spielfenster)
 	float deltaTime = 0.0f;
@@ -118,4 +135,3 @@ public class PlayerWalk : MonoBehaviour
 	}
 
 }
-    
