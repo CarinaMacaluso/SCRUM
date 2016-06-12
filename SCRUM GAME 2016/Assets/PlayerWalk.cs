@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class PlayerWalk : MonoBehaviour
 {
 	public float moveSpeed;
-	public int score;
+	public static int score;
 	public Text coinText;
 	public int health;
 	public bool isShieldActive;
@@ -107,11 +107,15 @@ public class PlayerWalk : MonoBehaviour
 	{
 		health -= damage;
 		healthBar.GetComponent<RectTransform> ().sizeDelta = new Vector2 (1500f * (health / 100f), 400f);
+
 	}
 
 	void gameOver ()
 	{
 		SceneManager.LoadScene ("GameOver");
+		if (score > PlayerPrefs.GetInt ("score")) {
+			PlayerPrefs.SetInt ("score", score);
+		}
 	}
 		
 
