@@ -19,6 +19,7 @@ public class PlayerWalk : MonoBehaviour
 	public GameObject healthBar;
 	public int currentLine;
 	public static bool gamePaused = false;
+	public int UfoCounter;
 
 	// Use this for initialization
 	void Start ()
@@ -28,6 +29,7 @@ public class PlayerWalk : MonoBehaviour
 		isShieldActive = false; 
 		shieldCounter = 0; 
 		currentLine = 0; 
+		UfoCounter = 0;
 
 	}
 
@@ -79,8 +81,7 @@ public class PlayerWalk : MonoBehaviour
 	{
 		if (coll.gameObject.tag == "Coin") {
 			Destroy (coll.gameObject);
-			score += 10;
-			coinText.text = score.ToString ();
+			increaseScore (10);
 		} else if (coll.gameObject.tag == "HealthItem") {
 			Destroy (coll.gameObject);
 			health = 100;
@@ -100,8 +101,20 @@ public class PlayerWalk : MonoBehaviour
 		} else if (coll.gameObject.tag == "Obstacle") {
 			print ("Outch. health: " + health);
 			changeHealth (10);
+		} else if (coll.gameObject.tag == "Ufo") {
+			Destroy (coll.gameObject);
+			UfoCounter += 1;
+			increaseScore (40);
+			print ("UFO-Teil eingesammelt.");
 		}
 	}
+
+
+	void increaseScore(int scoreToAdd) {
+		score += scoreToAdd;
+		coinText.text = score.ToString ();
+	}
+
 
 	void changeHealth (int damage)
 	{
