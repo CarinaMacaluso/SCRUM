@@ -84,12 +84,12 @@ public class PlayerWalk : MonoBehaviour
 		} else if (coll.gameObject.tag == "HealthItem") {
 			Destroy (coll.gameObject);
 			health = 100;
-			healthBar.GetComponent<RectTransform> ().sizeDelta = new Vector2 (1500*(health/100),400);
+			healthBar.GetComponent<RectTransform> ().sizeDelta = new Vector2 (1500 * (health / 100), 400);
 		} else if (coll.gameObject.tag == "Shield") {
 			Destroy (coll.gameObject);
 			isShieldActive = true;
 			print ("Shield is active."); 
-		} else if (coll.gameObject.tag == "Obstacle" && isShieldActive == true) {
+		} else if ((coll.gameObject.tag == "Obstacle" || coll.gameObject.tag == "Enemy") && isShieldActive == true) {
 			coll.gameObject.GetComponent<Collider> ().enabled = false; 
 		} else if (coll.gameObject.tag == "JetPack") {
 			Destroy (coll.gameObject);
@@ -97,21 +97,21 @@ public class PlayerWalk : MonoBehaviour
 		} else if (coll.gameObject.tag == "Enemy") {
 			print (coll.gameObject.name);
 			gameOver ();
-			//transform.position = new Vector3(transform.position.x,0,transform.position.z);
 		} else if (coll.gameObject.tag == "Obstacle") {
 			print ("Outch. health: " + health);
 			changeHealth (10);
 		}
 	}
 
-	void changeHealth(int damage) {
+	void changeHealth (int damage)
+	{
 		health -= damage;
-		healthBar.GetComponent<RectTransform> ().sizeDelta = new Vector2 (1500f*(health/100f),400f);
+		healthBar.GetComponent<RectTransform> ().sizeDelta = new Vector2 (1500f * (health / 100f), 400f);
 	}
 
-	void gameOver() {
+	void gameOver ()
+	{
 		SceneManager.LoadScene ("GameOver");
-
 	}
 		
 
