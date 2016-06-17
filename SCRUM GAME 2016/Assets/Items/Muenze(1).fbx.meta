@@ -142,7 +142,147 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: group
+        weight: 1
+      - path: group1
+        weight: 1
+      - path: group2
+        weight: 1
+      - path: group3
+        weight: 1
+      - path: group4
+        weight: 1
+      - path: group5
+        weight: 1
+      - path: group6
+        weight: 1
+      - path: group7
+        weight: 1
+      - path: group8
+        weight: 1
+      - path: group9
+        weight: 1
+      - path: group10
+        weight: 1
+      - path: group11
+        weight: 1
+      - path: group11/pasted__group10
+        weight: 1
+      - path: group12
+        weight: 1
+      - path: group13
+        weight: 1
+      - path: group13/pasted__group
+        weight: 1
+      - path: group14
+        weight: 1
+      - path: group15
+        weight: 1
+      - path: group16
+        weight: 1
+      - path: group16/pasted__group 1
+        weight: 1
+      - path: group17
+        weight: 1
+      - path: group18
+        weight: 1
+      - path: group18/pasted__group10 1
+        weight: 1
+      - path: group19
+        weight: 1
+      - path: group19/pasted__group11
+        weight: 1
+      - path: group19/pasted__group11/pasted__pasted__group10
+        weight: 1
+      - path: group20
+        weight: 1
+      - path: group20/pasted__group12
+        weight: 1
+      - path: group21
+        weight: 1
+      - path: group21/pasted__group16
+        weight: 1
+      - path: group21/pasted__group16/pasted__pasted__group
+        weight: 1
+      - path: group22
+        weight: 1
+      - path: group22/pasted__group14
+        weight: 1
+      - path: group23
+        weight: 1
+      - path: group23/pasted__group22
+        weight: 1
+      - path: group23/pasted__group22/pasted__pasted__group14
+        weight: 1
+      - path: pCube1
+        weight: 1
+      - path: pCube1/transform1
+        weight: 1
+      - path: pCube2
+        weight: 1
+      - path: pCube2/transform3
+        weight: 1
+      - path: pCube3
+        weight: 1
+      - path: pCube3/transform5
+        weight: 1
+      - path: pSphere1
+        weight: 1
+      - path: pSphere1/transform9
+        weight: 1
+      - path: pSphere2
+        weight: 1
+      - path: pSphere2/transform2
+        weight: 1
+      - path: pSphere3
+        weight: 1
+      - path: pSphere3/transform8
+        weight: 1
+      - path: pSphere4
+        weight: 1
+      - path: pSphere4/transform4
+        weight: 1
+      - path: pSphere5
+        weight: 1
+      - path: pSphere5/transform6
+        weight: 1
+      - path: pSphere6
+        weight: 1
+      - path: pSphere6/transform7
+        weight: 1
+      - path: pSphere7
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
     isReadable: 1
   meshes:
     lODScreenPercentages: []
