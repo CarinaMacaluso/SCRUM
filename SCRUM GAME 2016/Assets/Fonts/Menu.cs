@@ -51,9 +51,9 @@ public class Menu : MonoBehaviour
 
 	}
 
-	IEnumerator LevelLoad (string map)
+	IEnumerator LevelLoad (string level)
 	{
-	 async = SceneManager.LoadSceneAsync (map);
+		AsyncOperation async = SceneManager.LoadSceneAsync (level);
 		async.allowSceneActivation = false;
 		while (!async.isDone) {
 			progressBar.GetComponent<RectTransform> ().sizeDelta = new Vector2 (500 * async.progress, 20);
