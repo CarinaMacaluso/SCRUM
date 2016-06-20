@@ -10,6 +10,7 @@ public class GameOver : MonoBehaviour {
 	public Button exitButton;
 	public Text score;
 	public Text highScore;
+	public Image progressBar;
 
 	// Use this for initialization
 	void Start () {
@@ -34,7 +35,16 @@ public class GameOver : MonoBehaviour {
 
 	public void StartLevel()
 	{
-		SceneManager.LoadScene ("game");
+		StartCoroutine ("LevelLoad", (string)"game");
+	}
+
+	IEnumerator LevelLoad (string map)
+	{
+		AsyncOperation async = Application.LoadLevelAsync (map);
+		while (!async.isDone) {
+			progressBar.GetComponent<RectTransform> ().sizeDelta = new Vector2 (500 * async.progress, 20);
+			yield return null;
+		}
 	}
 
 	public void ExitGame ()
