@@ -5,7 +5,7 @@ using System.Collections;
 
 public class GameOver : MonoBehaviour {
 
-	public Canvas quitMenu;
+	public GameObject quitMenu;
 	public Button tryAgainButton;
 	public Button exitButton;
 	public Text score;
@@ -16,20 +16,18 @@ public class GameOver : MonoBehaviour {
 		score.text = "Score: " + PlayerWalk.score;
 		highScore.text = "Highscore: " + PlayerPrefs.GetInt ("score");
 		tryAgainButton = tryAgainButton.GetComponent<Button> ();
-		exitButton = exitButton.GetComponent<Button> ();
-		quitMenu.enabled = false;
-	}
+		exitButton = exitButton.GetComponent<Button> ();	}
 
 	public void ExitPress()
 	{
-		quitMenu.enabled = true;
+		quitMenu.gameObject.SetActive(true);
 		tryAgainButton.enabled = false;
 		exitButton.enabled = false;
 	}
 
 	public void NoPress ()
 	{
-		quitMenu.enabled = false;
+		quitMenu.gameObject.SetActive(false);
 		tryAgainButton.enabled = true;
 		exitButton.enabled = true;
 	}
