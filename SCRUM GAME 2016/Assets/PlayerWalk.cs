@@ -19,6 +19,7 @@ public class PlayerWalk : MonoBehaviour
 	public GameObject healthBar;
 	public int currentLine;
 	public static bool gamePaused = false;
+	public static bool gameFinished = false;
 	public int UfoCounter;
 
 	// Use this for initialization
@@ -36,9 +37,8 @@ public class PlayerWalk : MonoBehaviour
 
 	void Update ()
 	{
-		if (!gamePaused) {
+		if (!gamePaused && !gameFinished) {
 			deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
-
 			if (Input.GetKeyDown ("left") || Input.GetKeyDown (KeyCode.A)) { // left
 				if (currentLine == 0) {
 					transform.position = new Vector3 (leftLine.transform.position.x, transform.position.y, transform.position.z);

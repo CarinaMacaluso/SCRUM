@@ -23,11 +23,13 @@ public class FinishScript : MonoBehaviour
 	void OnCollisionEnter (Collision coll)
 	{
 		if (coll.gameObject.tag == "Player") {
-			PlayerWalk.gamePaused = true;
+			PlayerWalk.gameFinished = true;
 			finishCanvas.gameObject.SetActive (true);
+			if (PrefsHelper.getHighestScore() < PlayerWalk.score) {
+				PrefsHelper.saveHighscore (PlayerWalk.score);
+			}
 		}
 	}
-
 
 	public void showMenu() {
 		SceneManager.LoadScene ("Menue");
