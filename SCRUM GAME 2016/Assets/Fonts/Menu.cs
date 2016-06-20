@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System;
+using System.Linq;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Collections;
 
 public class Menu : MonoBehaviour
 {
@@ -14,6 +17,8 @@ public class Menu : MonoBehaviour
 	AsyncOperation async;
 	public RectTransform MenuGroup;
 	public RectTransform StoryGroup;
+	public Text highscoreText;
+	public RectTransform highScoreContainer;
 
 
 	// Use this for initialization
@@ -52,9 +57,7 @@ public class Menu : MonoBehaviour
 		async.allowSceneActivation = false;
 		while (!async.isDone) {
 			progressBar.GetComponent<RectTransform> ().sizeDelta = new Vector2 (500 * async.progress, 20);
-			print ("Progress: " + async.progress);
-			if (Mathf.Round(async.progress*100) == 89 && nextButton.gameObject.activeInHierarchy == false) {
-				print ("setActive");
+			if (Mathf.Round(async.progress*100) == 90 && nextButton.gameObject.activeInHierarchy == false) {
 				nextButton.gameObject.SetActive (true);
 			}
 			yield return null;
@@ -64,6 +67,39 @@ public class Menu : MonoBehaviour
 	public void setSceneActivaion() {
 		print ("setSceneActivaion");
 		async.allowSceneActivation = true;
+	}
+
+	[Obsolete("Only use, if only the currently highest score is to be saved.",true)]
+	public void showHighscoresDictionary() {
+		if (highScoreContainer.gameObject.activeInHierarchy == false) {
+			highScoreContainer.gameObject.SetActive (true);
+
+			string text= "";
+			foreach (KeyValuePair<string,int> item in PrefsHelper.getHighScoreDic().OrderBy(key => key.Value)) {
+				string entry = item.Key + ": " + item.Value;
+				entry += "\n" + text;
+				text = entry;
+			}
+			highscoreText.text = text;
+			print (text);
+		} else {
+			highScoreContainer.gameObject.SetActive (false);
+		}
+	}
+
+	public void showHighscores() {
+		if (highScoreContainer.gameObject.activeInHierarchy == false) {
+			highScoreContainer.gameObject.SetActive (true);
+
+			highscoreText.text = PrefsHelper.getScoresAsList ();
+		} else {
+			highScoreContainer.gameObject.SetActive (false);
+		}
+	}
+
+	public void clearHighscoreList() {
+		PlayerPrefs.DeleteKey (PrefsHelper.PREFS_KEY);
+		highscoreText.text = "-";
 	}
 
 	public void ExitGame ()

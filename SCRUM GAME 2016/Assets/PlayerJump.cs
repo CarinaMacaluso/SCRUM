@@ -24,7 +24,6 @@ public class PlayerJump : MonoBehaviour
 			if (Physics.Raycast (transform.position, Vector3.down, 0.5f)) {
 				onGround = true;
 				rb.velocity = new Vector3 (0, 0, 0);
-				;
 				//transform.position = new Vector3 (transform.position.x, -0.2f, transform.position.z);
 				print ("down");
 			} 

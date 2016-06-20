@@ -30,7 +30,6 @@ public class PlayerWalk : MonoBehaviour
 		shieldCounter = 0; 
 		currentLine = 0; 
 		UfoCounter = 0;
-
 	}
 
 	// Update is called once per frame
@@ -48,7 +47,6 @@ public class PlayerWalk : MonoBehaviour
 					transform.position = new Vector3 (centerLine.transform.position.x, transform.position.y, transform.position.z);
 					currentLine = 0; 
 				}
-
 			} else if (Input.GetKeyDown ("right") || Input.GetKeyDown (KeyCode.D)) { //right
 				if (currentLine == 0) {
 					transform.position = new Vector3 (rightLine.transform.position.x, transform.position.y, transform.position.z);
@@ -57,7 +55,7 @@ public class PlayerWalk : MonoBehaviour
 					transform.position = new Vector3 (centerLine.transform.position.x, transform.position.y, transform.position.z);
 					currentLine = 0;
 				}
-			} else if (Input.GetKeyDown (KeyCode.Space)) { 
+			} else if (Input.GetKeyDown (KeyCode.Space) && PlayerJump.onGround) { 
 				PlayerJump.spacePressed = true;
 			}
 		}
@@ -85,7 +83,7 @@ public class PlayerWalk : MonoBehaviour
 		} else if (coll.gameObject.tag == "HealthItem") {
 			Destroy (coll.gameObject);
 			health = 100;
-			healthBar.GetComponent<RectTransform> ().sizeDelta = new Vector2 (1500 * (health / 100), 400);
+			healthBar.GetComponent<RectTransform> ().sizeDelta = new Vector2 (1500 * (health / 100), 350);
 		} else if (coll.gameObject.tag == "Shield") {
 			Destroy (coll.gameObject);
 			isShieldActive = true;
@@ -110,7 +108,8 @@ public class PlayerWalk : MonoBehaviour
 	}
 
 
-	void increaseScore(int scoreToAdd) {
+	void increaseScore (int scoreToAdd)
+	{
 		score += scoreToAdd;
 		coinText.text = score.ToString ();
 	}
@@ -125,10 +124,10 @@ public class PlayerWalk : MonoBehaviour
 
 	void gameOver ()
 	{
-		SceneManager.LoadScene ("GameOver");
-		if (score > PlayerPrefs.GetInt ("score")) {
-			PlayerPrefs.SetInt ("score", score);
+		if (PrefsHelper.getHighestScore() < score) {
+			PrefsHelper.saveHighscore (score);
 		}
+		SceneManager.LoadScene ("GameOver");
 	}
 		
 

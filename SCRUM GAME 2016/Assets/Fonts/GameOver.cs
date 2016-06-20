@@ -11,7 +11,6 @@ public class GameOver : MonoBehaviour {
 	public Text score;
 	public Text highScore;
 	public Image progressBar;
-	AsyncOperation async;
 
 	// Use this for initialization
 	void Start () {
@@ -39,7 +38,7 @@ public class GameOver : MonoBehaviour {
 		AsyncOperation async = SceneManager.LoadSceneAsync ("game");
 		while (!async.isDone) {
 			progressBar.GetComponent<RectTransform> ().sizeDelta = new Vector2 (500 * async.progress, 20);
-			yield return async;
+			yield return null;
 		}
 	}
 
