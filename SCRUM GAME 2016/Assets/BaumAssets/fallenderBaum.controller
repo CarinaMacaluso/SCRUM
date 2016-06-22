@@ -33,7 +33,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Take 001
+  m_Name: fallenderBaum
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -46,7 +46,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 98c8918ba59c985498175bfc3215e5dc, type: 3}
-  m_Tag: 
+  m_Tag: fallenderBaum
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
