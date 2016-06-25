@@ -5,6 +5,18 @@ public class PauseGame : MonoBehaviour
 {
 	public Transform pauseCanvas;
 	public CameraScript script;
+	public PlayerWalk script2; 
+
+
+
+
+
+	void Start () {
+
+	
+
+
+	}
 
 	// Update is called once per frame
 	void Update ()
@@ -15,10 +27,18 @@ public class PauseGame : MonoBehaviour
 					PlayerWalk.gamePaused = true;
 					pauseCanvas.gameObject.SetActive (true);
 					Time.timeScale = 0f;
+					script2.alienbewegung.mute = true; 
+
+
+			
+
+					 
 				} else {
 					Time.timeScale = 1.0f;
 					PlayerWalk.gamePaused = false;
 					pauseCanvas.gameObject.SetActive (false);
+					script2.alienbewegung.mute = false; 
+				
 				}
 			}
 		}

@@ -21,6 +21,14 @@ public class PlayerWalk : MonoBehaviour
 	public static bool gamePaused = false;
 	public static bool gameFinished = false;
 	public int UfoCounter;
+	public AudioSource coinsound;
+	public AudioSource[] sounds;
+	public AudioSource muenzen;
+	public AudioSource alienbewegung;
+
+
+
+
 
 	// Use this for initialization
 	void Start ()
@@ -30,7 +38,14 @@ public class PlayerWalk : MonoBehaviour
 		isShieldActive = false; 
 		shieldCounter = 0; 
 		currentLine = 0; 
-		UfoCounter = 0;
+		UfoCounter = 0;	
+		coinsound.mute = true;
+		sounds = GetComponents<AudioSource>();
+		muenzen = sounds[0];
+		alienbewegung = sounds[1];
+		alienbewegung.mute = false; 
+	
+
 	}
 
 	// Update is called once per frame
@@ -80,6 +95,8 @@ public class PlayerWalk : MonoBehaviour
 		if (coll.gameObject.tag == "Coin") {
 			Destroy (coll.gameObject);
 			increaseScore (10);
+			coinsound.mute = false; 
+			coinsound.Play (); 
 		} else if (coll.gameObject.tag == "HealthItem") {
 			Destroy (coll.gameObject);
 			health = 100;
