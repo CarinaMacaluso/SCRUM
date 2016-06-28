@@ -11,6 +11,7 @@ public class PauseGame : MonoBehaviour
 
 
 
+
 	void Start () {
 
 	
@@ -28,6 +29,7 @@ public class PauseGame : MonoBehaviour
 					pauseCanvas.gameObject.SetActive (true);
 					Time.timeScale = 0f;
 					script2.alienbewegung.mute = true; 
+					script2.atmo.mute = true; 
 
 
 			
@@ -38,6 +40,7 @@ public class PauseGame : MonoBehaviour
 					PlayerWalk.gamePaused = false;
 					pauseCanvas.gameObject.SetActive (false);
 					script2.alienbewegung.mute = false; 
+					script2.atmo.mute = false; 
 				
 				}
 			}

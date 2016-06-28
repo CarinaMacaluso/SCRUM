@@ -15,6 +15,7 @@ public class Timer : MonoBehaviour {
     private Text text;
 
 
+
     void Start()
     {
         TimerText = GameObject.FindWithTag("TimerText");
@@ -29,6 +30,8 @@ public class Timer : MonoBehaviour {
         {
             remainingTime = time;
             timerSet = true;
+		
+
         }
 	}
 	
