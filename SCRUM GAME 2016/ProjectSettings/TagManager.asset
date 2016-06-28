@@ -16,6 +16,7 @@ TagManager:
   - jetPack
   - Ufo
   - Shield
+  - TriggerBaum
   layers:
   - Default
   - TransparentFX
