@@ -31,6 +31,12 @@ public class PlayerWalk : MonoBehaviour
 	public AudioSource collide;
 	public AudioSource jump;
 
+	public float time = 5;
+	public float remainingTime;
+	public bool timerSet = false;
+	private GameObject TimerText;
+	private Text text;
+
 
 
 
@@ -59,6 +65,10 @@ public class PlayerWalk : MonoBehaviour
 		collide = sounds [5];
 		jump = sounds [6];
 		jump.mute = true; 
+
+		TimerText = GameObject.FindWithTag("TimerText");
+		text = TimerText.GetComponent<Text>();
+
 
 	
 
@@ -103,7 +113,20 @@ public class PlayerWalk : MonoBehaviour
 			if (shieldCounter == 250) {
 				isShieldActive = false;
 				shieldCounter = 0;
-				print ("Shield is inactive"); 
+				print ("Shield is inactive");
+			}
+
+			if(timerSet == true)
+			{
+				remainingTime -= Time.deltaTime;
+				text.text = remainingTime.ToString("F2");
+//				text.text = "Hallo";
+			}
+
+			if(remainingTime <= 0)
+			{
+				timerSet = false;
+				text.text = " ";
 			} 
 		}
 	}
@@ -127,6 +150,9 @@ public class PlayerWalk : MonoBehaviour
 			print ("Shield is active.");
 			einsammeln.mute = false; 
 			einsammeln.Play ();
+
+			remainingTime = time;
+			timerSet = true;
 		}
 		else if ((coll.gameObject.tag == "Obstacle" || coll.gameObject.tag == "Enemy") && isShieldActive == true) {
 			coll.gameObject.GetComponent<Collider> ().enabled = false;
