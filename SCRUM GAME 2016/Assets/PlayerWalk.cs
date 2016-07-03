@@ -25,6 +25,17 @@ public class PlayerWalk : MonoBehaviour
 	public AudioSource[] sounds;
 	public AudioSource muenzen;
 	public AudioSource alienbewegung;
+	public AudioSource einsammeln;
+	public AudioSource einsammelntank;
+	public AudioSource atmo;
+	public AudioSource collide;
+	public AudioSource jump;
+
+	public float time = 5;
+	public float remainingTime;
+	public bool timerSet = false;
+	private GameObject TimerText;
+	private Text text;
 
 
 
@@ -44,6 +55,21 @@ public class PlayerWalk : MonoBehaviour
 		muenzen = sounds[0];
 		alienbewegung = sounds[1];
 		alienbewegung.mute = false; 
+		einsammeln = sounds [2];
+		einsammeln.mute = true; 
+		einsammelntank = sounds [3];
+		einsammelntank.mute = true; 
+		atmo = sounds [4];
+		atmo.mute = false; 
+		collide.mute = true; 
+		collide = sounds [5];
+		jump = sounds [6];
+		jump.mute = true; 
+
+		TimerText = GameObject.FindWithTag("TimerText");
+		text = TimerText.GetComponent<Text>();
+
+
 	
 
 	}
@@ -72,6 +98,8 @@ public class PlayerWalk : MonoBehaviour
 				}
 			} else if (Input.GetKeyDown (KeyCode.Space) && PlayerJump.onGround) { 
 				PlayerJump.spacePressed = true;
+				jump.mute = false;
+				jump.Play (); 
 			}
 		}
 	}
@@ -85,7 +113,20 @@ public class PlayerWalk : MonoBehaviour
 			if (shieldCounter == 250) {
 				isShieldActive = false;
 				shieldCounter = 0;
-				print ("Shield is inactive"); 
+				print ("Shield is inactive");
+			}
+
+			if(timerSet == true)
+			{
+				remainingTime -= Time.deltaTime;
+				text.text = remainingTime.ToString("F2");
+//				text.text = "Hallo";
+			}
+
+			if(remainingTime <= 0)
+			{
+				timerSet = false;
+				text.text = " ";
 			} 
 		}
 	}
@@ -101,21 +142,33 @@ public class PlayerWalk : MonoBehaviour
 			Destroy (coll.gameObject);
 			health = 100;
 			healthBar.GetComponent<RectTransform> ().sizeDelta = new Vector2 (1500 * (health / 100), 350);
+			einsammeln.mute = false;
+			einsammeln.Play (); 
 		} else if (coll.gameObject.tag == "Shield") {
 			Destroy (coll.gameObject);
 			isShieldActive = true;
-			print ("Shield is active."); 
-		} else if ((coll.gameObject.tag == "Obstacle" || coll.gameObject.tag == "Enemy") && isShieldActive == true) {
-			coll.gameObject.GetComponent<Collider> ().enabled = false; 
+			print ("Shield is active.");
+			einsammeln.mute = false; 
+			einsammeln.Play ();
+
+			remainingTime = time;
+			timerSet = true;
+		}
+		else if ((coll.gameObject.tag == "Obstacle" || coll.gameObject.tag == "Enemy") && isShieldActive == true) {
+			coll.gameObject.GetComponent<Collider> ().enabled = false;
 		} else if (coll.gameObject.tag == "JetPack") {
 			Destroy (coll.gameObject);
 			PlayerJump.jetPack = true;
+			einsammeln.mute = false;
+			einsammeln.Play (); 
 		} else if (coll.gameObject.tag == "Enemy") {
 			print (coll.gameObject.name);
 			gameOver ();
 		} else if (coll.gameObject.tag == "Obstacle") {
 			print ("Outch. health: " + health);
 			changeHealth (10);
+			collide.mute = false;
+			collide.Play (); 
 		} else if (coll.gameObject.tag == "Ufo") {
 			Destroy (coll.gameObject);
 			UfoCounter += 1;
@@ -123,6 +176,10 @@ public class PlayerWalk : MonoBehaviour
 			print ("UFO-Teil eingesammelt.");
 		}
 	}
+
+
+
+
 
 
 	void increaseScore (int scoreToAdd)
