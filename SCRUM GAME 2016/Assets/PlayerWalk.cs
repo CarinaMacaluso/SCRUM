@@ -10,6 +10,7 @@ public class PlayerWalk : MonoBehaviour
 	public float moveSpeed;
 	public static int score;
 	public Text coinText;
+	public Text ufoText;
 	public int health;
 	public bool isShieldActive;
 	public int shieldCounter;
@@ -51,9 +52,9 @@ public class PlayerWalk : MonoBehaviour
 		currentLine = 0; 
 		UfoCounter = 0;	
 		coinsound.mute = true;
-		sounds = GetComponents<AudioSource>();
-		muenzen = sounds[0];
-		alienbewegung = sounds[1];
+		sounds = GetComponents<AudioSource> ();
+		muenzen = sounds [0];
+		alienbewegung = sounds [1];
 		alienbewegung.mute = false; 
 		einsammeln = sounds [2];
 		einsammeln.mute = true; 
@@ -66,8 +67,8 @@ public class PlayerWalk : MonoBehaviour
 		jump = sounds [6];
 		jump.mute = true; 
 
-		TimerText = GameObject.FindWithTag("TimerText");
-		text = TimerText.GetComponent<Text>();
+		TimerText = GameObject.FindWithTag ("TimerText");
+		text = TimerText.GetComponent<Text> ();
 
 
 	
@@ -116,15 +117,13 @@ public class PlayerWalk : MonoBehaviour
 				print ("Shield is inactive");
 			}
 
-			if(timerSet == true)
-			{
+			if (timerSet == true) {
 				remainingTime -= Time.deltaTime;
-				text.text = remainingTime.ToString("F2");
+				text.text = remainingTime.ToString ("F2");
 //				text.text = "Hallo";
 			}
 
-			if(remainingTime <= 0)
-			{
+			if (remainingTime <= 0) {
 				timerSet = false;
 				text.text = " ";
 			} 
@@ -153,14 +152,14 @@ public class PlayerWalk : MonoBehaviour
 
 			remainingTime = time;
 			timerSet = true;
-		}
-		else if ((coll.gameObject.tag == "Obstacle" || coll.gameObject.tag == "Enemy") && isShieldActive == true) {
+		} else if ((coll.gameObject.tag == "Obstacle" || coll.gameObject.tag == "Enemy") && isShieldActive == true) {
 			coll.gameObject.GetComponent<Collider> ().enabled = false;
 		} else if (coll.gameObject.tag == "JetPack") {
 			Destroy (coll.gameObject);
 			PlayerJump.jetPack = true;
 			einsammeln.mute = false;
 			einsammeln.Play (); 
+			print ("JetPack eingesammelt.");
 		} else if (coll.gameObject.tag == "Enemy") {
 			print (coll.gameObject.name);
 			gameOver ();
@@ -172,15 +171,11 @@ public class PlayerWalk : MonoBehaviour
 		} else if (coll.gameObject.tag == "Ufo") {
 			Destroy (coll.gameObject);
 			UfoCounter += 1;
+			ufoText.text = UfoCounter + "/2";
 			increaseScore (40);
 			print ("UFO-Teil eingesammelt.");
 		}
 	}
-
-
-
-
-
 
 	void increaseScore (int scoreToAdd)
 	{
@@ -201,7 +196,7 @@ public class PlayerWalk : MonoBehaviour
 
 	void gameOver ()
 	{
-		if (PrefsHelper.getHighestScore() < score) {
+		if (PrefsHelper.getHighestScore () < score) {
 			PrefsHelper.saveHighscore (score);
 		}
 		GameOver.previousLevel = SceneManager.GetActiveScene ().name;

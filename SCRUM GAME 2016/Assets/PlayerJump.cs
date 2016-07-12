@@ -5,7 +5,7 @@ public class PlayerJump : MonoBehaviour
 {
 	public float jumpStrength;
 	public float jetPackStrength;
-	public static bool jetPack = false;
+	public static bool jetPack = true;
 	public static bool onGround = true;
 	public static bool spacePressed = false;
 	Rigidbody rb;
@@ -41,11 +41,11 @@ public class PlayerJump : MonoBehaviour
 					spacePressed = false;
 				}
 			}
-
+			 
 			if (jetPack == true) {
 				jetPackCounter++;
 				if (jetPackCounter == 250) {
-					jetPack = false;
+					//jetPack = false;
 					jetPackCounter = 0;
 					print ("JetPack is inactive.");
 				}
