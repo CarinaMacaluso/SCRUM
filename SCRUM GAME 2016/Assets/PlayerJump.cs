@@ -21,9 +21,9 @@ public class PlayerJump : MonoBehaviour
 	void FixedUpdate ()
 	{
 		if (!onGround) {
-			if (Physics.Raycast (transform.position, Vector3.down, 0.5f)) {
+			if (Physics.Raycast (transform.position, Vector3.down, 1f)) {
 				onGround = true;
-				rb.velocity = new Vector3 (0, 0, 0);
+
 				//transform.position = new Vector3 (transform.position.x, -0.2f, transform.position.z);
 				print ("down");
 			} 
@@ -34,8 +34,9 @@ public class PlayerJump : MonoBehaviour
 				}
 			} else { 
 				if (spacePressed) {
+					rb.velocity = new Vector3 (0, 0, 0);
 					rb.velocity = new Vector3 (0, jumpStrength, 0);
-					print (rb.velocity.y);
+					//print (rb.velocity.y);
 					onGround = false;
 					spacePressed = false;
 				}

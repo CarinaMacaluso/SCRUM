@@ -192,6 +192,9 @@ public class PlayerWalk : MonoBehaviour
 	void changeHealth (int damage)
 	{
 		health -= damage;
+		if (health <= 0) {
+			gameOver ();
+		}
 		healthBar.GetComponent<RectTransform> ().sizeDelta = new Vector2 (1500f * (health / 100f), 400f);
 
 	}
