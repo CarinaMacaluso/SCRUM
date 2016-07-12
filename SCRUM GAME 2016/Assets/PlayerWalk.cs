@@ -204,6 +204,7 @@ public class PlayerWalk : MonoBehaviour
 		if (PrefsHelper.getHighestScore() < score) {
 			PrefsHelper.saveHighscore (score);
 		}
+		GameOver.previousLevel = SceneManager.GetActiveScene ().name;
 		SceneManager.LoadScene ("GameOver");
 	}
 		

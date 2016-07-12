@@ -12,6 +12,7 @@ public class GameOver : MonoBehaviour
 	public Text score;
 	public Text highScore;
 	public Image progressBar;
+	public static string previousLevel;
 
 	// Use this for initialization
 	void Start ()
@@ -38,7 +39,8 @@ public class GameOver : MonoBehaviour
 
 	public void StartLevel ()
 	{
-		StartCoroutine ("LevelLoad", (string)"game");
+
+		StartCoroutine ("LevelLoad", (string)previousLevel);
 	}
 
 	IEnumerator LevelLoad (string level)
