@@ -7,6 +7,11 @@ public class FinishScript : MonoBehaviour
 {
 
 	public Canvas finishCanvas;
+	AsyncOperation async;
+	public Button nextButton;
+	public Image progressBar;
+	public GameObject endGroup;
+	public RectTransform storyGroup;
 
 	// Use this for initialization
 	void Start ()
@@ -36,6 +41,27 @@ public class FinishScript : MonoBehaviour
 	}
 
 	public void nextLevel() {
-		//TODO: next Level
+		endGroup.gameObject.SetActive (false);
+		storyGroup.gameObject.SetActive (true);
+		StartCoroutine ("LevelLoad", (string)"game2");
+	}
+
+
+	IEnumerator LevelLoad (string level)
+	{
+		async = SceneManager.LoadSceneAsync (level);
+		async.allowSceneActivation = false;
+		while (!async.isDone) {
+			progressBar.GetComponent<RectTransform> ().sizeDelta = new Vector2 (500 * async.progress, 20);
+			if (Mathf.Round(async.progress*100) == 90 && nextButton.gameObject.activeInHierarchy == false) {
+				nextButton.gameObject.SetActive (true);
+			}
+			yield return null;
+		}
+	}
+
+	public void setSceneActivaion() {
+		print ("setSceneActivaion");
+		async.allowSceneActivation = true;
 	}
 }
