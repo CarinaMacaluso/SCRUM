@@ -41,9 +41,9 @@ public class FinishScript : MonoBehaviour
 	}
 
 	public void nextLevel() {
-		endGroup.gameObject.SetActive (false);
+		finishCanvas.gameObject.SetActive (false);
 		storyGroup.gameObject.SetActive (true);
-		StartCoroutine ("LevelLoad", (string)"Level2Screene");
+		StartCoroutine ("LevelLoad", (string)"game2");
 	}
 
 
