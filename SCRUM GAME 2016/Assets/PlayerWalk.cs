@@ -155,7 +155,7 @@ public class PlayerWalk : MonoBehaviour
 		} else if (coll.gameObject.tag == "JetPack") {
 			Destroy (coll.gameObject);
 			jetPackImage.gameObject.SetActive (true);
-			PlayerJump.jetPack = true;
+			PlayerJump.jetPackFuel +=350;
 			einsammeln.mute = false;
 			einsammeln.Play (); 
 			print ("JetPack eingesammelt.");

@@ -6,16 +6,14 @@ public class PlayerJump : MonoBehaviour
 {
 	public float jumpStrength;
 	public float jetPackStrength;
-	public static bool jetPack = false;
+	public static int jetPackFuel = 0;
 	public static bool onGround = true;
 	public static bool spacePressed = false;
 	public Image jetPackImage;
 	Rigidbody rb;
-	int jetPackCounter;
 
 	void Start ()
 	{
-		jetPackCounter = 0;
 		rb = GetComponent<Rigidbody> ();
 	}
 
@@ -39,7 +37,7 @@ public class PlayerJump : MonoBehaviour
 			}
 		}
 
-		if (jetPack == true) {
+		if (jetPackFuel > 0) {
 			if (Input.GetKey (KeyCode.J)) {
 				//rb.AddForce (new Vector3 (0, jetPackStrength, 0), ForceMode.Acceleration); 
 				rb.velocity = new Vector3 (0, jumpStrength, 0);
@@ -50,22 +48,13 @@ public class PlayerJump : MonoBehaviour
 				//rb.velocity = new Vector3 (0, 0, 0);
 				print ("Jetpack on ground");
 			} 
-
-			print (transform.position.y);
-		}
-
-			 
-		if (jetPack == true) {
-			jetPackCounter++;
-			if (jetPackCounter == 350) {
-				jetPack = false;
+			jetPackFuel--;
+			if (jetPackFuel <= 0) {
 				jetPackImage.gameObject.SetActive (false);
-				jetPackCounter = 0;
 				print ("JetPack is inactive.");
 			}
+			print ("Fuel left: " + jetPackFuel);
 		}
-		
-
 	}
 }
 
