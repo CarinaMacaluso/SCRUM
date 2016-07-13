@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerJump : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class PlayerJump : MonoBehaviour
 	public static bool jetPack = false;
 	public static bool onGround = true;
 	public static bool spacePressed = false;
+	public Image jetPackImage;
 	Rigidbody rb;
 	int jetPackCounter;
 
@@ -28,29 +30,41 @@ public class PlayerJump : MonoBehaviour
 				print ("down");
 			} 
 		} else {
-			if (jetPack == true) {
-				if (Input.GetKey (KeyCode.J)) {
-					rb.AddForce (new Vector3 (0, jetPackStrength, 0), ForceMode.Acceleration); 
-				}
-			} else { 
-				if (spacePressed) {
-					rb.velocity = new Vector3 (0, 0, 0);
-					rb.velocity = new Vector3 (0, jumpStrength, 0);
-					//print (rb.velocity.y);
-					onGround = false;
-					spacePressed = false;
-				}
-			}
-			 
-			if (jetPack == true) {
-				jetPackCounter++;
-				if (jetPackCounter == 250) {
-					jetPack = false;
-					jetPackCounter = 0;
-					print ("JetPack is inactive.");
-				}
+			if (spacePressed) {
+				rb.velocity = new Vector3 (0, 0, 0);
+				rb.velocity = new Vector3 (0, jumpStrength, 0);
+				//print (rb.velocity.y);
+				onGround = false;
+				spacePressed = false;
 			}
 		}
+
+		if (jetPack == true) {
+			if (Input.GetKey (KeyCode.J)) {
+				//rb.AddForce (new Vector3 (0, jetPackStrength, 0), ForceMode.Acceleration); 
+				rb.velocity = new Vector3 (0, jumpStrength, 0);
+
+			}
+			if (Physics.Raycast (transform.position, Vector3.down, 1f)) {
+				onGround = true;
+				//rb.velocity = new Vector3 (0, 0, 0);
+				print ("Jetpack on ground");
+			} 
+
+			print (transform.position.y);
+		}
+
+			 
+		if (jetPack == true) {
+			jetPackCounter++;
+			if (jetPackCounter == 350) {
+				jetPack = false;
+				jetPackImage.gameObject.SetActive (false);
+				jetPackCounter = 0;
+				print ("JetPack is inactive.");
+			}
+		}
+		
 
 	}
 }

@@ -11,6 +11,7 @@ public class PlayerWalk : MonoBehaviour
 	public static int score;
 	public Text coinText;
 	public Text ufoText;
+	public Image jetPackImage;
 	public int health;
 	public bool isShieldActive;
 	public int shieldCounter;
@@ -69,10 +70,7 @@ public class PlayerWalk : MonoBehaviour
 
 		TimerText = GameObject.FindWithTag ("TimerText");
 		text = TimerText.GetComponent<Text> ();
-
-
-	
-
+		jetPackImage.gameObject.SetActive (false);
 	}
 
 	// Update is called once per frame
@@ -156,6 +154,7 @@ public class PlayerWalk : MonoBehaviour
 			coll.gameObject.GetComponent<Collider> ().enabled = false;
 		} else if (coll.gameObject.tag == "JetPack") {
 			Destroy (coll.gameObject);
+			jetPackImage.gameObject.SetActive (true);
 			PlayerJump.jetPack = true;
 			einsammeln.mute = false;
 			einsammeln.Play (); 
