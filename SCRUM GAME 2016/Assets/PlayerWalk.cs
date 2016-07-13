@@ -40,12 +40,11 @@ public class PlayerWalk : MonoBehaviour
 	private Text text;
 
 
-
-
-
 	// Use this for initialization
 	void Start ()
 	{
+
+		gameFinished = false;
 		score = 0;
 		health = 100; 
 		isShieldActive = false; 
@@ -106,7 +105,6 @@ public class PlayerWalk : MonoBehaviour
 	void FixedUpdate ()
 	{
 		transform.Translate (new Vector3 (0, 0, -moveSpeed));
-
 		if (isShieldActive == true) {
 			shieldCounter++;
 			if (shieldCounter == 250) {
@@ -189,7 +187,7 @@ public class PlayerWalk : MonoBehaviour
 		if (health <= 0) {
 			gameOver ();
 		}
-		healthBar.GetComponent<RectTransform> ().sizeDelta = new Vector2 (1500f * (health / 100f), 400f);
+		healthBar.GetComponent<RectTransform> ().sizeDelta = new Vector2 (1500f * (health / 100f), 350f);
 
 	}
 
