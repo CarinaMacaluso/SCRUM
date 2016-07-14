@@ -11,6 +11,7 @@ public class PlayerJump : MonoBehaviour
 	public static bool spacePressed = false;
 	public Image jetPackImage;
 	Rigidbody rb;
+	public AudioSource jump;
 
 	void Start ()
 	{
@@ -34,6 +35,7 @@ public class PlayerJump : MonoBehaviour
 				//print (rb.velocity.y);
 				onGround = false;
 				spacePressed = false;
+				jump.Play ();
 			}
 		}
 
@@ -41,6 +43,8 @@ public class PlayerJump : MonoBehaviour
 			if (Input.GetKey (KeyCode.J)) {
 				//rb.AddForce (new Vector3 (0, jetPackStrength, 0), ForceMode.Acceleration); 
 				rb.velocity = new Vector3 (0, jumpStrength, 0);
+				jetPackImage.fillAmount = 0;
+
 
 			}
 			if (Physics.Raycast (transform.position, Vector3.down, 1f)) {
@@ -50,7 +54,7 @@ public class PlayerJump : MonoBehaviour
 			} 
 			jetPackFuel--;
 			if (jetPackFuel <= 0) {
-				jetPackImage.gameObject.SetActive (false);
+				//jetPackImage.gameObject.SetActive (false);
 				print ("JetPack is inactive.");
 			}
 			print ("Fuel left: " + jetPackFuel);

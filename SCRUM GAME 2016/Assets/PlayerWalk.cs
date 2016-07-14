@@ -33,6 +33,7 @@ public class PlayerWalk : MonoBehaviour
 	public AudioSource collide;
 	public AudioSource jump;
 
+
 	public float time = 5;
 	public float remainingTime;
 	public bool timerSet = false;
@@ -66,6 +67,7 @@ public class PlayerWalk : MonoBehaviour
 		collide = sounds [5];
 		jump = sounds [6];
 		jump.mute = true; 
+
 
 		TimerText = GameObject.FindWithTag ("TimerText");
 		text = TimerText.GetComponent<Text> ();

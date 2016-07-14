@@ -32,6 +32,7 @@ public class PauseGame : MonoBehaviour
 					script2.atmo.mute = true; 
 
 
+
 			
 
 					 
@@ -41,6 +42,7 @@ public class PauseGame : MonoBehaviour
 					pauseCanvas.gameObject.SetActive (false);
 					script2.alienbewegung.mute = false; 
 					script2.atmo.mute = false; 
+					 
 				
 				}
 			}
