@@ -1,0 +1,137 @@
+fileFormatVersion: 2
+guid: a5139b8c9f20f5e49a3f28ffe1d5e2af
+timeCreated: 1468500021
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Age Test 001
+    100002: Birth 001
+    100004: Collision 001
+    100006: Deflector001
+    100008: Delete 001
+    100010: Display 001
+    100012: Display 002
+    100014: Display 003
+    100016: Event 001
+    100018: Event 002
+    100020: Event 003
+    100022: Find Target 001
+    100024: Force 001
+    100026: Particle View 001
+    100028: PF Arrow001
+    100030: PF Arrow002
+    100032: PF Arrow003
+    100034: PF Engine001
+    100036: PF Source 001
+    100038: PF Source 001->Event 001
+    100040: PF Source 001->Event 002
+    100042: PF Source 001->Event 003
+    100044: PF Source 001->PF Source 001
+    100046: PhysCamera001.Target
+    100048: Position Object 001
+    100050: Render 001
+    100052: //RootNode
+    100054: Tube001
+    100056: Vortex001
+    100058: Wind001
+    100060: Wind002
+    400000: Age Test 001
+    400002: Birth 001
+    400004: Collision 001
+    400006: Deflector001
+    400008: Delete 001
+    400010: Display 001
+    400012: Display 002
+    400014: Display 003
+    400016: Event 001
+    400018: Event 002
+    400020: Event 003
+    400022: Find Target 001
+    400024: Force 001
+    400026: Particle View 001
+    400028: PF Arrow001
+    400030: PF Arrow002
+    400032: PF Arrow003
+    400034: PF Engine001
+    400036: PF Source 001
+    400038: PF Source 001->Event 001
+    400040: PF Source 001->Event 002
+    400042: PF Source 001->Event 003
+    400044: PF Source 001->PF Source 001
+    400046: PhysCamera001.Target
+    400048: Position Object 001
+    400050: Render 001
+    400052: //RootNode
+    400054: Tube001
+    400056: Vortex001
+    400058: Wind001
+    400060: Wind002
+    2300000: Tube001
+    3300000: Tube001
+    4300000: Tube001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
