@@ -11,7 +11,7 @@ public class PlayerJump : MonoBehaviour
 	public static bool spacePressed = false;
 	public Image jetPackImage;
 	Rigidbody rb;
-	public AudioSource jump;
+
 
 	void Start ()
 	{
@@ -35,7 +35,7 @@ public class PlayerJump : MonoBehaviour
 				//print (rb.velocity.y);
 				onGround = false;
 				spacePressed = false;
-				jump.Play ();
+
 			}
 		}
 

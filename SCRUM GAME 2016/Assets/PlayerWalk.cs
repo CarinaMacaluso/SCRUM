@@ -23,15 +23,10 @@ public class PlayerWalk : MonoBehaviour
 	public static bool gamePaused = false;
 	public static bool gameFinished = false;
 	public int UfoCounter;
-	public AudioSource coinsound;
-	public AudioSource[] sounds;
-	public AudioSource muenzen;
-	public AudioSource alienbewegung;
-	public AudioSource einsammeln;
-	public AudioSource einsammelntank;
-	public AudioSource atmo;
-	public AudioSource collide;
-	public AudioSource jump;
+	public AudioClip[] sounds;
+	enum SoundClips {collide, shield, coin, life, jump};
+
+
 
 
 	public float time = 5;
@@ -52,26 +47,14 @@ public class PlayerWalk : MonoBehaviour
 		shieldCounter = 0; 
 		currentLine = 0; 
 		UfoCounter = 0;	
-		coinsound.mute = true;
-		sounds = GetComponents<AudioSource> ();
-		muenzen = sounds [0];
-		alienbewegung = sounds [1];
-		alienbewegung.mute = false; 
-		einsammeln = sounds [2];
-		einsammeln.mute = true; 
-		einsammelntank = sounds [3];
-		einsammelntank.mute = true; 
-		atmo = sounds [4];
-		atmo.mute = false; 
-		collide.mute = true; 
-		collide = sounds [5];
-		jump = sounds [6];
-		jump.mute = true; 
+
 
 
 		TimerText = GameObject.FindWithTag ("TimerText");
 		text = TimerText.GetComponent<Text> ();
 		jetPackImage.gameObject.SetActive (false);
+
+
 	}
 
 	// Update is called once per frame
@@ -84,6 +67,7 @@ public class PlayerWalk : MonoBehaviour
 				if (currentLine == 0) {
 					transform.position = new Vector3 (leftLine.transform.position.x, transform.position.y, transform.position.z);
 					currentLine = 1; 
+
 				} else if (currentLine == -1) {
 					transform.position = new Vector3 (centerLine.transform.position.x, transform.position.y, transform.position.z);
 					currentLine = 0; 
@@ -98,8 +82,9 @@ public class PlayerWalk : MonoBehaviour
 				}
 			} else if (Input.GetKeyDown (KeyCode.Space) && PlayerJump.onGround) { 
 				PlayerJump.spacePressed = true;
-				jump.mute = false;
-				jump.Play (); 
+				GetComponent<AudioSource> ().clip = sounds [(int)SoundClips.jump]; 
+				GetComponent<AudioSource> ().Play (); 
+				 
 			}
 		}
 	}
@@ -133,31 +118,35 @@ public class PlayerWalk : MonoBehaviour
 		if (coll.gameObject.tag == "Coin") {
 			Destroy (coll.gameObject);
 			increaseScore (10);
-			coinsound.mute = false; 
-			coinsound.Play (); 
+			GetComponent<AudioSource> ().clip = sounds [(int)SoundClips.coin]; 
+			GetComponent<AudioSource> ().Play (); 
+
 		} else if (coll.gameObject.tag == "HealthItem") {
 			Destroy (coll.gameObject);
 			health = 100;
 			healthBar.GetComponent<RectTransform> ().sizeDelta = new Vector2 (1500 * (health / 100), 350);
-			einsammeln.mute = false;
-			einsammeln.Play (); 
+			GetComponent<AudioSource> ().clip = sounds [(int)SoundClips.life]; 
+			GetComponent<AudioSource> ().Play (); 
+		 
 		} else if (coll.gameObject.tag == "Shield") {
 			Destroy (coll.gameObject);
 			isShieldActive = true;
 			print ("Shield is active.");
-			einsammeln.mute = false; 
-			einsammeln.Play ();
+			GetComponent<AudioSource> ().clip = sounds [(int)SoundClips.shield]; 
+			GetComponent<AudioSource> ().Play (); 
+
 
 			remainingTime = time;
 			timerSet = true;
 		} else if ((coll.gameObject.tag == "Obstacle" || coll.gameObject.tag == "Enemy") && isShieldActive == true) {
 			coll.gameObject.GetComponent<Collider> ().enabled = false;
+			GetComponent<AudioSource> ().clip = sounds [(int)SoundClips.collide]; 
+			GetComponent<AudioSource> ().Play (); 
 		} else if (coll.gameObject.tag == "JetPack") {
 			Destroy (coll.gameObject);
 			jetPackImage.gameObject.SetActive (true);
 			PlayerJump.jetPackFuel +=350;
-			einsammeln.mute = false;
-			einsammeln.Play (); 
+
 			print ("JetPack eingesammelt.");
 		} else if (coll.gameObject.tag == "Enemy") {
 			print (coll.gameObject.name);
@@ -165,8 +154,9 @@ public class PlayerWalk : MonoBehaviour
 		} else if (coll.gameObject.tag == "Obstacle") {
 			print ("Outch. health: " + health);
 			changeHealth (10);
-			collide.mute = false;
-			collide.Play (); 
+			GetComponent<AudioSource> ().clip = sounds [(int)SoundClips.collide]; 
+			GetComponent<AudioSource> ().Play (); 
+		 
 		} else if (coll.gameObject.tag == "Ufo") {
 			Destroy (coll.gameObject);
 			UfoCounter += 1;

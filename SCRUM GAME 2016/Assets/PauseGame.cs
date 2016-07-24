@@ -5,7 +5,8 @@ public class PauseGame : MonoBehaviour
 {
 	public Transform pauseCanvas;
 	public CameraScript script;
-	public PlayerWalk script2; 
+	public AudioSource playercamera;
+
 
 
 
@@ -28,8 +29,8 @@ public class PauseGame : MonoBehaviour
 					PlayerWalk.gamePaused = true;
 					pauseCanvas.gameObject.SetActive (true);
 					Time.timeScale = 0f;
-					script2.alienbewegung.mute = true; 
-					script2.atmo.mute = true; 
+					playercamera.mute = true; 
+				
 
 
 
@@ -40,8 +41,8 @@ public class PauseGame : MonoBehaviour
 					Time.timeScale = 1.0f;
 					PlayerWalk.gamePaused = false;
 					pauseCanvas.gameObject.SetActive (false);
-					script2.alienbewegung.mute = false; 
-					script2.atmo.mute = false; 
+					playercamera.mute = false; 
+
 					 
 				
 				}
