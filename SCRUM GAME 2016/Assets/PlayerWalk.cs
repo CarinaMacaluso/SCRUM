@@ -25,6 +25,10 @@ public class PlayerWalk : MonoBehaviour
 	public int UfoCounter;
 	public AudioClip[] sounds;
 	enum SoundClips {collide, shield, coin, life, jump};
+	public Transform shielddescription; 
+	public Transform lostlife;
+	public Transform gainlife; 
+	public Transform jumpdesc; 
 
 
 
@@ -53,6 +57,15 @@ public class PlayerWalk : MonoBehaviour
 		TimerText = GameObject.FindWithTag ("TimerText");
 		text = TimerText.GetComponent<Text> ();
 		jetPackImage.gameObject.SetActive (false);
+
+		shielddescription.gameObject.SetActive (false);
+		lostlife.gameObject.SetActive (false); 
+		gainlife.gameObject.SetActive (false); 
+		jumpdesc.gameObject.SetActive (false); 
+
+	
+
+
 
 
 	}
@@ -87,7 +100,11 @@ public class PlayerWalk : MonoBehaviour
 				 
 			}
 		}
+
+
 	}
+
+
 
 	void FixedUpdate ()
 	{
@@ -108,8 +125,11 @@ public class PlayerWalk : MonoBehaviour
 
 			if (remainingTime <= 0) {
 				timerSet = false;
-				text.text = " ";
-			} 
+				text.text = "Timer";
+				shielddescription.gameObject.SetActive (false);
+			}
+
+		
 		}
 	}
 
@@ -127,6 +147,9 @@ public class PlayerWalk : MonoBehaviour
 			healthBar.GetComponent<RectTransform> ().sizeDelta = new Vector2 (1500 * (health / 100), 350);
 			GetComponent<AudioSource> ().clip = sounds [(int)SoundClips.life]; 
 			GetComponent<AudioSource> ().Play (); 
+			lostlife.gameObject.SetActive (false); 
+			gainlife.gameObject.SetActive (true);
+
 		 
 		} else if (coll.gameObject.tag == "Shield") {
 			Destroy (coll.gameObject);
@@ -134,6 +157,7 @@ public class PlayerWalk : MonoBehaviour
 			print ("Shield is active.");
 			GetComponent<AudioSource> ().clip = sounds [(int)SoundClips.shield]; 
 			GetComponent<AudioSource> ().Play (); 
+			shielddescription.gameObject.SetActive (true);
 
 
 			remainingTime = time;
@@ -145,6 +169,7 @@ public class PlayerWalk : MonoBehaviour
 		} else if (coll.gameObject.tag == "JetPack") {
 			Destroy (coll.gameObject);
 			jetPackImage.gameObject.SetActive (true);
+			jumpdesc.gameObject.SetActive (true); 
 			PlayerJump.jetPackFuel +=350;
 
 			print ("JetPack eingesammelt.");
@@ -156,6 +181,8 @@ public class PlayerWalk : MonoBehaviour
 			changeHealth (10);
 			GetComponent<AudioSource> ().clip = sounds [(int)SoundClips.collide]; 
 			GetComponent<AudioSource> ().Play (); 
+			lostlife.gameObject.SetActive (true); 
+			gainlife.gameObject.SetActive (false); 
 		 
 		} else if (coll.gameObject.tag == "Ufo") {
 			Destroy (coll.gameObject);

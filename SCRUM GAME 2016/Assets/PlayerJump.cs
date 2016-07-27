@@ -10,6 +10,7 @@ public class PlayerJump : MonoBehaviour
 	public static bool onGround = true;
 	public static bool spacePressed = false;
 	public Image jetPackImage;
+	public Transform jumpdesc; 
 	Rigidbody rb;
 
 
@@ -44,6 +45,7 @@ public class PlayerJump : MonoBehaviour
 				//rb.AddForce (new Vector3 (0, jetPackStrength, 0), ForceMode.Acceleration); 
 				rb.velocity = new Vector3 (0, jumpStrength, 0);
 				jetPackImage.fillAmount = 0;
+				jumpdesc.gameObject.SetActive (false); 
 
 
 			}
