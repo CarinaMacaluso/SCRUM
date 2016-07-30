@@ -2,6 +2,7 @@
 
 using UnityEngine;
 using System.Collections;
+using System.Timers;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -26,12 +27,8 @@ public class PlayerWalk : MonoBehaviour
 	public AudioClip[] sounds;
 	enum SoundClips {collide, shield, coin, life, jump};
 	public Transform shielddescription; 
-	public Transform lostlife;
-	public Transform gainlife; 
-	public Transform jumpdesc; 
-
-
-
+	public Text healthDescription;
+	public Text jumpDescription; 
 
 	public float time = 5;
 	public float remainingTime;
@@ -52,22 +49,12 @@ public class PlayerWalk : MonoBehaviour
 		currentLine = 0; 
 		UfoCounter = 0;	
 
-
-
 		TimerText = GameObject.FindWithTag ("TimerText");
 		text = TimerText.GetComponent<Text> ();
 		jetPackImage.gameObject.SetActive (false);
-
 		shielddescription.gameObject.SetActive (false);
-		lostlife.gameObject.SetActive (false); 
-		gainlife.gameObject.SetActive (false); 
-		jumpdesc.gameObject.SetActive (false); 
-
-	
-
-
-
-
+		healthDescription.gameObject.SetActive (false); 
+		//jumpDescription.gameObject.SetActive (false); 
 	}
 
 	// Update is called once per frame
@@ -101,7 +88,6 @@ public class PlayerWalk : MonoBehaviour
 			}
 		}
 
-
 	}
 
 
@@ -115,6 +101,7 @@ public class PlayerWalk : MonoBehaviour
 				isShieldActive = false;
 				shieldCounter = 0;
 				print ("Shield is inactive");
+				shielddescription.gameObject.SetActive (false);
 			}
 
 			if (timerSet == true) {
@@ -126,7 +113,6 @@ public class PlayerWalk : MonoBehaviour
 			if (remainingTime <= 0) {
 				timerSet = false;
 				text.text = "Timer";
-				shielddescription.gameObject.SetActive (false);
 			}
 
 		
@@ -144,13 +130,12 @@ public class PlayerWalk : MonoBehaviour
 		} else if (coll.gameObject.tag == "HealthItem") {
 			Destroy (coll.gameObject);
 			health = 100;
+			healthDescription.text = "100%";
+			healthDescription.gameObject.SetActive (true);
+			Invoke ("hideHealthDescription", 3.0f);
 			healthBar.GetComponent<RectTransform> ().sizeDelta = new Vector2 (1500 * (health / 100), 350);
 			GetComponent<AudioSource> ().clip = sounds [(int)SoundClips.life]; 
-			GetComponent<AudioSource> ().Play (); 
-			lostlife.gameObject.SetActive (false); 
-			gainlife.gameObject.SetActive (true);
-
-		 
+			GetComponent<AudioSource> ().Play ();  
 		} else if (coll.gameObject.tag == "Shield") {
 			Destroy (coll.gameObject);
 			isShieldActive = true;
@@ -158,7 +143,6 @@ public class PlayerWalk : MonoBehaviour
 			GetComponent<AudioSource> ().clip = sounds [(int)SoundClips.shield]; 
 			GetComponent<AudioSource> ().Play (); 
 			shielddescription.gameObject.SetActive (true);
-
 
 			remainingTime = time;
 			timerSet = true;
@@ -169,7 +153,7 @@ public class PlayerWalk : MonoBehaviour
 		} else if (coll.gameObject.tag == "JetPack") {
 			Destroy (coll.gameObject);
 			jetPackImage.gameObject.SetActive (true);
-			jumpdesc.gameObject.SetActive (true); 
+			//jumpDescription.gameObject.SetActive (true); 
 			PlayerJump.jetPackFuel +=350;
 
 			print ("JetPack eingesammelt.");
@@ -180,10 +164,7 @@ public class PlayerWalk : MonoBehaviour
 			print ("Outch. health: " + health);
 			changeHealth (10);
 			GetComponent<AudioSource> ().clip = sounds [(int)SoundClips.collide]; 
-			GetComponent<AudioSource> ().Play (); 
-			lostlife.gameObject.SetActive (true); 
-			gainlife.gameObject.SetActive (false); 
-		 
+			GetComponent<AudioSource> ().Play (); 		 
 		} else if (coll.gameObject.tag == "Ufo") {
 			Destroy (coll.gameObject);
 			UfoCounter += 1;
@@ -202,13 +183,21 @@ public class PlayerWalk : MonoBehaviour
 
 	void changeHealth (int damage)
 	{
+		healthDescription.text = "-"+damage;
+		healthDescription.gameObject.SetActive (true);
+		Invoke ("hideHealthDescription", 3.0f);
 		health -= damage;
 		if (health <= 0) {
 			gameOver ();
 		}
 		healthBar.GetComponent<RectTransform> ().sizeDelta = new Vector2 (1500f * (health / 100f), 350f);
-
 	}
+
+
+	void hideHealthDescription() {
+		healthDescription.gameObject.SetActive (false);
+	}
+		
 
 	void gameOver ()
 	{

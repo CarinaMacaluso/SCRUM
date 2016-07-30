@@ -10,7 +10,7 @@ public class PlayerJump : MonoBehaviour
 	public static bool onGround = true;
 	public static bool spacePressed = false;
 	public Image jetPackImage;
-	public Transform jumpdesc; 
+	public Transform jumpDescription; 
 	Rigidbody rb;
 
 
@@ -25,7 +25,6 @@ public class PlayerJump : MonoBehaviour
 		if (!onGround) {
 			if (Physics.Raycast (transform.position, Vector3.down, 1f)) {
 				onGround = true;
-
 				//transform.position = new Vector3 (transform.position.x, -0.2f, transform.position.z);
 				print ("down");
 			} 
@@ -44,19 +43,19 @@ public class PlayerJump : MonoBehaviour
 			if (Input.GetKey (KeyCode.J)) {
 				//rb.AddForce (new Vector3 (0, jetPackStrength, 0), ForceMode.Acceleration); 
 				rb.velocity = new Vector3 (0, jumpStrength, 0);
-				jetPackImage.fillAmount = 0;
-				jumpdesc.gameObject.SetActive (false); 
-
-
+				//jetPackImage.fillAmount = 0;
 			}
+
 			if (Physics.Raycast (transform.position, Vector3.down, 1f)) {
 				onGround = true;
 				//rb.velocity = new Vector3 (0, 0, 0);
 				print ("Jetpack on ground");
 			} 
+
 			jetPackFuel--;
 			if (jetPackFuel <= 0) {
-				//jetPackImage.gameObject.SetActive (false);
+				jetPackImage.gameObject.SetActive (false);
+				//jumpDescription.gameObject.SetActive (false);
 				print ("JetPack is inactive.");
 			}
 			print ("Fuel left: " + jetPackFuel);
