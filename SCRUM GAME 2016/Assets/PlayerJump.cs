@@ -52,7 +52,7 @@ public class PlayerJump : MonoBehaviour
 			if (Input.GetKey (KeyCode.J)) {
 				//rb.AddForce (new Vector3 (0, jetPackStrength, 0), ForceMode.Acceleration); 
 				rb.velocity = new Vector3 (0, jumpStrength, 0);
-				//jetPackImage.fillAmount = 0;
+				jetPackImage.fillAmount = 0;
 			}
 
 			if (Physics.Raycast (transform.position, Vector3.down, 1f)) {
@@ -64,7 +64,7 @@ public class PlayerJump : MonoBehaviour
 			jetPackFuel--;
 			if (jetPackFuel <= 0) {
 				jetPackImage.gameObject.SetActive (false);
-				//jumpDescription.gameObject.SetActive (false);
+				jumpDescription.gameObject.SetActive (false);
 				print ("JetPack is inactive.");
 			}
 			print ("Fuel left: " + jetPackFuel);

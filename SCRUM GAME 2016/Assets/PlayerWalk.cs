@@ -64,7 +64,7 @@ collide,
 		jetPackImage.gameObject.SetActive (false);
 		shielddescription.gameObject.SetActive (false);
 		healthDescription.gameObject.SetActive (false); 
-		//jumpDescription.gameObject.SetActive (false); 
+		jumpDescription.gameObject.SetActive (false); 
 	}
 
 	// Update is called once per frame
@@ -166,7 +166,7 @@ collide,
 		} else if (coll.gameObject.tag == "JetPack") {
 			Destroy (coll.gameObject);
 			jetPackImage.gameObject.SetActive (true);
-			//jumpDescription.gameObject.SetActive (true); 
+			jumpDescription.gameObject.SetActive (true); 
 			PlayerJump.jetPackFuel += 350;
 
 			print ("JetPack eingesammelt.");
