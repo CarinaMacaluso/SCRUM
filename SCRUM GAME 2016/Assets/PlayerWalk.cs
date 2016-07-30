@@ -23,7 +23,7 @@ public class PlayerWalk : MonoBehaviour
 	public int currentLine;
 	public static bool gamePaused = false;
 	public static bool gameFinished = false;
-	public int UfoCounter;
+	public static int UfoCounter;
 	public AudioClip[] sounds;
 	enum SoundClips {collide, shield, coin, life, jump};
 	public Transform shielddescription; 
