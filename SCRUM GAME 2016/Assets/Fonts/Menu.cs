@@ -19,6 +19,7 @@ public class Menu : MonoBehaviour
 	public RectTransform StoryGroup;
 	public Text highscoreText;
 	public RectTransform highScoreContainer;
+	public RectTransform DescriptionGroup; 
 
 
 	// Use this for initialization
@@ -48,6 +49,7 @@ public class Menu : MonoBehaviour
 		StartCoroutine ("LevelLoad", (string)"game");
 		MenuGroup.gameObject.SetActive (false);
 		StoryGroup.gameObject.SetActive (true);
+		DescriptionGroup.gameObject.SetActive (false); 
 
 	}
 
@@ -105,5 +107,11 @@ public class Menu : MonoBehaviour
 	public void ExitGame ()
 	{
 		Application.Quit (); 
+	}
+
+	public void startdescription () {
+		MenuGroup.gameObject.SetActive (false);
+		StoryGroup.gameObject.SetActive (false);
+		DescriptionGroup.gameObject.SetActive (true); 
 	}
 }
