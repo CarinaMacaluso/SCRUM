@@ -184,9 +184,11 @@ public class PlayerWalk : MonoBehaviour
 
 	void changeHealth (int damage)
 	{
-		healthDescription.text = "-"+damage;
-		healthDescription.gameObject.SetActive (true);
-		Invoke ("hideHealthDescription", 3.0f);
+		if (healthDescription != null) {
+			healthDescription.text = "-" + damage;
+			healthDescription.gameObject.SetActive (true);
+			Invoke ("hideHealthDescription", 3.0f);
+		}
 		health -= damage;
 		if (health <= 0) {
 			gameOver ();

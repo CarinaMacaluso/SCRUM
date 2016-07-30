@@ -29,10 +29,12 @@ public class PlayerJump : MonoBehaviour
 				rb.velocity = new Vector3 (0, 0, 0);
 				rb.velocity = new Vector3 (0, jumpStrength, 0);
 				highJumpEnabled = true;
+				print ("normal");
 			} else if(highJumpEnabled) {
 				rb.velocity = new Vector3 (0, 0, 0);
 				rb.velocity = new Vector3 (0, highJumpStrength, 0);
 				highJumpEnabled = false;
+				print ("high");
 			}
 			spacePressed = false;
 			onGround = false;
