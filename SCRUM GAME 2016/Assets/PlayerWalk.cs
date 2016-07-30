@@ -80,11 +80,12 @@ public class PlayerWalk : MonoBehaviour
 					transform.position = new Vector3 (centerLine.transform.position.x, transform.position.y, transform.position.z);
 					currentLine = 0;
 				}
-			} else if (Input.GetKeyDown (KeyCode.Space) && PlayerJump.onGround) { 
-				PlayerJump.spacePressed = true;
-				GetComponent<AudioSource> ().clip = sounds [(int)SoundClips.jump]; 
-				GetComponent<AudioSource> ().Play (); 
-				 
+			} else if (Input.GetKeyDown (KeyCode.Space)) { 
+				if (PlayerJump.onGround || PlayerJump.highJumpEnabled) {
+					PlayerJump.spacePressed = true;
+					GetComponent<AudioSource> ().clip = sounds [(int)SoundClips.jump]; 
+					GetComponent<AudioSource> ().Play (); 
+				}
 			}
 		}
 

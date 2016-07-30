@@ -59,6 +59,5 @@ public class GameOver : MonoBehaviour
 
 	public void ReturnMenue () {
 		Application.LoadLevel ("Menue");
-
 	}
 }
