@@ -25,10 +25,20 @@ public class PlayerWalk : MonoBehaviour
 	public static bool gameFinished = false;
 	public static int UfoCounter;
 	public AudioClip[] sounds;
-	enum SoundClips {collide, shield, coin, life, jump};
-	public Transform shielddescription; 
+
+	enum SoundClips
+	{
+collide,
+		shield,
+		coin,
+		life,
+		jump}
+
+	;
+
+	public Transform shielddescription;
 	public Text healthDescription;
-	public Text jumpDescription; 
+	public Text jumpDescription;
 
 	public float time = 5;
 	public float remainingTime;
@@ -122,7 +132,9 @@ public class PlayerWalk : MonoBehaviour
 
 	void OnCollisionEnter (Collision coll)
 	{
-		if (coll.gameObject.tag == "Coin") {
+		if (coll.gameObject.tag == "Floor") {
+			PlayerJump.onGround = true;
+		} else if (coll.gameObject.tag == "Coin") {
 			Destroy (coll.gameObject);
 			increaseScore (10);
 			GetComponent<AudioSource> ().clip = sounds [(int)SoundClips.coin]; 
@@ -155,7 +167,7 @@ public class PlayerWalk : MonoBehaviour
 			Destroy (coll.gameObject);
 			jetPackImage.gameObject.SetActive (true);
 			//jumpDescription.gameObject.SetActive (true); 
-			PlayerJump.jetPackFuel +=350;
+			PlayerJump.jetPackFuel += 350;
 
 			print ("JetPack eingesammelt.");
 		} else if (coll.gameObject.tag == "Enemy") {
@@ -197,10 +209,11 @@ public class PlayerWalk : MonoBehaviour
 	}
 
 
-	void hideHealthDescription() {
+	void hideHealthDescription ()
+	{
 		healthDescription.gameObject.SetActive (false);
 	}
-		
+
 
 	void gameOver ()
 	{

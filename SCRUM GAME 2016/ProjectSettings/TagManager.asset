@@ -17,6 +17,7 @@ TagManager:
   - Ufo
   - Shield
   - TriggerBaum
+  - Floor
   layers:
   - Default
   - TransparentFX
