@@ -35,7 +35,7 @@ public class FinishScript : MonoBehaviour
 			PlayerWalk.gameFinished = true;
 
 			if(PlayerWalk.UfoCounter != 2 && SceneManager.GetActiveScene().name == "game") {
-				errorMessage.text= "... but you sadly missed " + (2-PlayerWalk.UfoCounter) + " UFO-parts.";
+				errorMessage.text= "... but you sadly missed " + (2-PlayerWalk.UfoCounter) + " pieces of the spaceship.";
 				errorMessage.gameObject.SetActive (true);
 				loadNextLevel.gameObject.SetActive (false);
 				tryAgainButton.gameObject.SetActive (true);
