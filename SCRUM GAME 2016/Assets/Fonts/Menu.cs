@@ -35,6 +35,7 @@ public class Menu : MonoBehaviour
 		quitMenu.gameObject.SetActive (true);
 		startText.enabled = false;
 		exitText.enabled = false;
+		highScoreContainer.gameObject.SetActive (false);
 	}
 
 	public void NoPress ()
