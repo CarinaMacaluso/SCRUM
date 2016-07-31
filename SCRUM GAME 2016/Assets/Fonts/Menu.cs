@@ -28,6 +28,8 @@ public class Menu : MonoBehaviour
 	
 		startText = startText.GetComponent<Button> ();
 		exitText = exitText.GetComponent<Button> ();
+		AudioListener.pause = false;
+
 	}
 
 	public void ExitPress ()

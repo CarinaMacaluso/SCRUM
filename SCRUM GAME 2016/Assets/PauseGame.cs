@@ -16,7 +16,8 @@ public class PauseGame : MonoBehaviour
 
 	void Start () {
 
-	
+		AudioListener.pause = false;
+
 
 
 	}
@@ -31,6 +32,7 @@ public class PauseGame : MonoBehaviour
 					pauseCanvas.gameObject.SetActive (true);
 					Time.timeScale = 0f;
 					playercamera.mute = true; 
+					AudioListener.pause = true;
 				
 
 
@@ -43,6 +45,7 @@ public class PauseGame : MonoBehaviour
 					PlayerWalk.gamePaused = false;
 					pauseCanvas.gameObject.SetActive (false);
 					playercamera.mute = false; 
+					AudioListener.pause = false; 
 
 					 
 				

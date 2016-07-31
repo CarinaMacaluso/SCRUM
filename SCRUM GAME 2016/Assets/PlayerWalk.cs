@@ -32,7 +32,9 @@ collide,
 		shield,
 		coin,
 		life,
-		jump}
+		jump,
+	tank,
+	jet}
 
 	;
 
@@ -95,7 +97,7 @@ collide,
 					PlayerJump.spacePressed = true;
 					GetComponent<AudioSource> ().clip = sounds [(int)SoundClips.jump]; 
 					GetComponent<AudioSource> ().Play (); 
-				}
+				} 
 			}
 		}
 
@@ -141,14 +143,15 @@ collide,
 			GetComponent<AudioSource> ().Play (); 
 
 		} else if (coll.gameObject.tag == "HealthItem") {
+			GetComponent<AudioSource> ().clip = sounds [(int)SoundClips.life]; 
+			GetComponent<AudioSource> ().Play ();  
 			Destroy (coll.gameObject);
 			health = 100;
 			healthDescription.text = "100%";
 			healthDescription.gameObject.SetActive (true);
 			Invoke ("hideHealthDescription", 3.0f);
 			healthBar.GetComponent<RectTransform> ().sizeDelta = new Vector2 (1500 * (health / 100), 350);
-			GetComponent<AudioSource> ().clip = sounds [(int)SoundClips.life]; 
-			GetComponent<AudioSource> ().Play ();  
+		
 		} else if (coll.gameObject.tag == "Shield") {
 			Destroy (coll.gameObject);
 			isShieldActive = true;
@@ -167,6 +170,8 @@ collide,
 			Destroy (coll.gameObject);
 			jetPackImage.gameObject.SetActive (true);
 			jumpDescription.gameObject.SetActive (true); 
+			GetComponent<AudioSource> ().clip = sounds [(int)SoundClips.tank]; 
+			GetComponent<AudioSource> ().Play (); 
 			PlayerJump.jetPackFuel += 350;
 
 			print ("JetPack eingesammelt.");
@@ -184,6 +189,8 @@ collide,
 			ufoText.text = UfoCounter + "/2";
 			increaseScore (40);
 			print ("UFO-Teil eingesammelt.");
+			GetComponent<AudioSource> ().clip = sounds [(int)SoundClips.shield]; 
+			GetComponent<AudioSource> ().Play (); 
 		}
 	}
 

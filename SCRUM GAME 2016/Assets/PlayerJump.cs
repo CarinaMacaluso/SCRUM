@@ -14,6 +14,9 @@ public class PlayerJump : MonoBehaviour
 	public Transform jumpDescription; 
 	Rigidbody rb;
 	public static bool highJumpEnabled = false;
+	public AudioClip[] sounds;
+	enum SoundClips
+	{jet};
 
 	void Start ()
 	{
@@ -53,6 +56,8 @@ public class PlayerJump : MonoBehaviour
 				//rb.AddForce (new Vector3 (0, jetPackStrength, 0), ForceMode.Acceleration); 
 				rb.velocity = new Vector3 (0, jumpStrength, 0);
 				jetPackImage.fillAmount = 0;
+				GetComponent<AudioSource> ().clip = sounds [(int)SoundClips.jet]; 
+				GetComponent<AudioSource> ().Play (); 
 			}
 
 			if (Physics.Raycast (transform.position, Vector3.down, 1f)) {
@@ -66,6 +71,9 @@ public class PlayerJump : MonoBehaviour
 				jetPackImage.gameObject.SetActive (false);
 				jumpDescription.gameObject.SetActive (false);
 				print ("JetPack is inactive.");
+				GetComponent<AudioSource> ().clip = sounds [(int)SoundClips.jet]; 
+				GetComponent<AudioSource> ().Pause (); 
+
 			}
 			print ("Fuel left: " + jetPackFuel);
 		}
