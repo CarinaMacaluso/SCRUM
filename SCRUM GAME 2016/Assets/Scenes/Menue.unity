@@ -441,10 +441,11 @@ MonoBehaviour:
     twice to jump higher!\n\nIf you collect a jetpack, press \"J\" as long as you
     have fuel to fly! \n\nUse the arrow keys to move between the lanes!\n\nIf you
     hit any kind of obstacle it will mean your death!\n\nCollect the  2 spaceship
-    items in every level to succeed, otherwise the level starts again!\n\nIf you hit
-    animals or enemies at all it will reduce the life score so pay attention to the
-    display in the upper left corner!\n\nPay attention tot the impact of the items
-    that will be explained during the game!\n\nGood Luck Hozer! :D "
+    items in the first level to get to the second level, otherwise the level starts
+    again!\n\nIf you hit animals or enemies at all it will reduce the life score so
+    pay attention to the display in the upper left corner!\n\nPay attention tot the
+    impact of the items that will be explained during the game!\n\nGood Luck Hozer!
+    :D "
 --- !u!222 &189019123
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1019,7 +1020,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &520309938
 RectTransform:
   m_ObjectHideFlags: 0
